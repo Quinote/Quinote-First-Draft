@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+  Quinote Software Group 2015
+
+  Author: Cameron Basham
+-->
+
+<html>
+  <head>
+    <title>Quinote Editor First Draft</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../quill/quill.base.css">
+    <link rel="stylesheet" type="text/css" href="../../quill/quill.snow.css">
+    <link rel="stylesheet" type="text/css" href="editor.css">
+  </head>
+
+  <body>
+    <div id="container-fluid">
+      <div class="row">
+        <div class="col col-sm-9 col-sm-push-3">
+          <div class="editor-wrapper">
+            <div class="toolbar">
+              <select title="Font" class="ql-font">
+                <option value="sans-serif" selected>Sans Serif</option>
+                <option value="Georgia, serif">Serif</option>
+                <option value="Monaco, 'Courier New', monospace">Monospace</option>
+              </select>
+              <select title="Size" class="ql-size">
+                <option value="10px">Small</option>
+                <option value="13px" selected>Normal</option>
+                <option value="18px">Large</option>
+                <option value="32px">Huge</option>
+              </select>
+              <button class="ql-bold">B</button>
+              <button class="ql-italic">I</button>
+              <button class="ql-underline">U</button>
+              <button class="ql-strike">S</button>
+              <select title="Font Color" class="ql-color">
+                <option value="#000000" selected>Black</option>
+              </select>
+              <select title="Background Color" class="ql-background">
+                <option value="#FFFFFF" selected>White</option>
+              </select>
+            </div>
+            <div id="editor"></div>
+          </div>
+        </div>
+        <div class="col col-sm-3 col-sm-pull-9">
+          <div class="summary-wrapper"> <!--List of keys-->
+            <div class="notes-list">
+              <ol>
+                <li>These entries will probably need to be formatted better</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../quill/quill.min.js"></script>
+    <script type="text/javascript" src="editor.js"></script>
+    <script type="text/javascript" src="../parser/parser.js"></script>
+  </body>
+</html>

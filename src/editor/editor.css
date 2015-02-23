@@ -1,0 +1,31 @@
+
+
+#container-fluid {
+    margin: 15px;
+}
+
+.row {
+    margin: 0;
+}
+.col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.editor-wrapper {
+    /*border: 1px solid #ccc;*/
+}
+
+.editor-wrapper .toolbar {
+    padding-bottom: 5px;
+}
+
+#editor {
+    border: 1px solid #ccc;
+}
+
+.summary-wrapper .notes-list ol {
+    /*list-style-type: circle;*/
+    list-style-type: none;
+    padding-left: 15px;
+}
