@@ -1,6 +1,6 @@
 body {
     font-size: 14px;
-    font-family: Goudy Old Style, Serif;
+    font-family: "Goudy Old Style", serif;
     line-height: 1.2;
     display: block;
     /*background-image: url(../svg/background.svg);*/
@@ -41,12 +41,13 @@ body {
     /*font-size: 30px;*/
     /*font-weight: 200;*/
     /*letter-spacing: 1px;*/
-}
+/*}*/
+
 .md-class {
     float: right;
 }
 .container {
-    background: #;
+    /*background: #;*/
     min-height: 100%;
 }
 footer {
@@ -149,7 +150,7 @@ footer {
 #inToolbar{
     padding: 10px;
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle;
 }
 #editor {
     height:150mm;
@@ -183,4 +184,8 @@ footer {
 }
 h3 {
     clear: left;
+}
+
+.hidden {
+    display: none;
 }

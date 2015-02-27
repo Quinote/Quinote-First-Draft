@@ -8,7 +8,11 @@
  *    • Find meaningful way to handle user's text formatting
  *    • Take more efficient approach to rebuilding list on text input
  *    • Build more logical and aesthetically pleasing list
- *    • Handle oddities like double input (in BuildList)
+ *    • Adapt handlers for new UI (and subsequently uncomment them)
+ *    • Get font stuff working
+ *      – Use selected font from get-go
+ *      – Keep it on "enter" input
+ *
  */
 
 var editor;
@@ -18,7 +22,7 @@ var main = function() {
     editor = new Quill('#editor', {
         modules: {
             'toolbar': {
-                container: '.editor-wrapper .toolbar'
+                container: '#editorToolbar'
             }
         },
         styles: false
@@ -38,12 +42,26 @@ var main = function() {
         })
     ;
 
-    $(window).resize(resizeEditor);
+    //$('#fontsize')
+    //    .on('change')(function() {
+    //        $('.ql-size').add
+    //    })
+
+    //$(window).resize(resizeEditor);
 
 
     // Set up initial environment
     resizeEditor();
-    editor.focus();
+    //editor.focus();
+    //$.each([8, 10, 12, 14, 16, 18, 24, 30, 36, 48, 72, 96], function(index, value) {
+    //    var fSize = $('.ql-size');
+    //    fSize.append($('<option value=' + this.value + '>' + value + '</option>'));
+    //            //.val(value + "px")
+    //            //.label(value));
+    //});
+    //fSize.val('12px').prop('selected', true);
+    //fSize.change();
+
 };
 
 $(document).ready(main);
