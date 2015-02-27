@@ -6,14 +6,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script type="text/javascript" src="js/questions.js" ></script>
-    <link rel="stylesheet" type="text/css" href="css/frontend.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/frontend.css" />
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="../../../../Downloads/Quinote-First-Draft-master/quill/quill.base.css">
+    	<link rel="stylesheet" type="text/css" href="../../../../Downloads/Quinote-First-Draft-master/src/editor/editor.css">
 
-    <!--Editor style-->
-    <link rel="stylesheet" type="text/css" href="../../quill/quill.base.css">
-    <link rel="stylesheet" type="text/css" href="../editor/editor.css">
 	</head>
-
 
 	<body>
 		<div id="page">
@@ -21,7 +20,7 @@
 				<div id="back">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 width="40px" height="60px" viewBox="-0.5 0.5 40 60" enable-background="new -0.5 0.5 40 60" xml:space="preserve">
-						<rect x="-0.5" y="0.5" fill="none" width="40" height="60"/>
+						<rect x="-0.5" y="0.5" fill="#4FA542" width="40" height="60"/>
 						<g id="Layer_1_1_">
 							<rect x="10.5" y="26.5" fill="#FFFFFF" width="19" height="2"/>
 						</g>
@@ -31,229 +30,295 @@
 					</svg>
 				</div>
 				<div id="topNav">
-					<h1>Quinote</h1>
+					<span style="verticle-align:middle">
+						User Document Title
+					</span>
+					<span>
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 width="210px" height="50px" viewBox="150 250 550 100" enable-background="new 150 250 550 100" xml:space="preserve">
+						<g>
+							<path fill="#FFFFFF" d="M351.104,303.687v28.349c0,12.76-8.91,21.245-20.749,21.245c-11.846,0-20.745-8.485-20.745-21.245v-28.349
+								h8.899v28.349c0,7.487,5.469,12.76,11.846,12.76s11.839-5.272,11.839-12.76v-28.349H351.104z"/>
+							<path fill="#FFFFFF" d="M362.805,287.66c3.444,0,5.366,2.643,5.366,5.374c0,2.738-1.922,5.369-5.366,5.369
+								c-3.442,0-5.365-2.631-5.365-5.369C357.439,290.303,359.362,287.66,362.805,287.66z M358.352,352.451v-48.583h8.905v48.583H358.352
+								z"/>
+							<path fill="#FFFFFF" d="M374.659,352.588v-28.347c0-12.738,8.906-21.256,20.753-21.256c11.838,0,20.746,8.518,20.746,21.256v28.347
+								h-8.908v-28.347c0-7.484-5.468-12.738-11.838-12.738c-6.372,0-11.847,5.254-11.847,12.738v28.347H374.659z"/>
+							<path fill="#FFFFFF" d="M448.675,303.075c13.457,0,25.201,10.331,25.201,25.317c0,14.972-11.744,25.297-25.201,25.297
+								c-13.459,0-25.205-10.325-25.205-25.297C423.47,313.406,435.216,303.075,448.675,303.075z M448.675,345.202
+								c9.206,0,15.895-6.9,15.895-16.81c0-9.929-6.688-16.8-15.895-16.8s-15.892,6.871-15.892,16.8
+								C432.783,338.302,439.469,345.202,448.675,345.202z"/>
+							<path fill="#FFFFFF" d="M507.564,312.367h-17.42v25.507c0,4.557,2.13,6.077,6.681,6.077h10.739v8.5H495.62
+								c-9.117,0-14.382-6.073-14.382-15.686v-45.041h8.906v12.143h17.42V312.367z"/>
+							<path fill="#FFFFFF" d="M306.513,343.19l-0.941,0.114c0,0.919-0.006,1.829-0.227,2.687c-1.091,4.302-5.371,6.309-9.566,5.245
+								c-5.167-1.311-8.541-5.6-11.085-10.024l-3.229-6.198c-3.937-7.544-9.727-13.571-18.117-15.703
+								c-4.578-1.165-9.347-0.789-13.903,0.197l-0.292,1.142c2.467-0.152,5.099-0.22,7.459,0.385c7.105,1.807,12.648,9.742,15.606,16.095
+								l2.621,5.475c3.019,6.61,7.186,14.985,14.825,16.921c7.748,1.979,14.644-2.235,16.61-9.97
+								C306.823,347.398,306.857,345.457,306.513,343.19z"/>
+							<g>
+								<path fill="#FFFFFF" d="M519.962,328.839c0.105,8.067,5.841,15.634,14.972,15.634c7.339,0,11.261-3.544,14.879-9.175l8.069,4.328
+									c-4.68,8.174-13.382,12.918-23.054,12.918c-15.18,0-24.423-10.902-24.423-24.825c0-14.521,8.175-25.415,24.209-25.415
+									c15.836,0,23.268,11.089,23.268,25.12v1.415H519.962z M548.326,321.977c-1.169-7.073-6.054-11.809-13.712-11.809
+									c-7.43,0-12.957,5.052-14.129,11.809H548.326z"/>
+							</g>
+							<path fill="#FFFFFF" d="M263.093,352.41c-21.453,0-38.907-17.458-38.907-38.913c0-21.458,17.454-38.916,38.907-38.916
+								c21.454,0,38.914,17.458,38.914,38.916C302.007,334.952,284.546,352.41,263.093,352.41z M263.093,284.863
+								c-15.779,0-28.623,12.851-28.623,28.634c0,15.782,12.844,28.619,28.623,28.619c15.783,0,28.624-12.837,28.624-28.619
+								C291.717,297.714,278.876,284.863,263.093,284.863z"/>
+						</g>
+						</svg>
+					</span>
 				</div>
 			</div>
+
 			<div id="pagecontainer">
-				<div id="editor-wrapper">
-          <div id="editorToolbar">
-						<div id="inToolbar">
-							<div id="row1">
-								<div class="controlmenu" id="control1">
-									<svg class="icons" id="print" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M16 4h32v8h-32v-8z" fill="#000000"></path>
-									<path d="M60 16h-56c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h12v16h32v-16h12c2.2 0 4-1.8 4-4v-20c0-2.2-1.8-4-4-4zM8 28c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zM44 56h-24v-20h24v20z" fill="#000000"></path>
-									</svg>
+				<div id="editorspace">
+					<div id="editorToolbar">
+						<div id="toolbar">
+							<div class="controlmenu" id="control1">
+								<svg class="icons" id="print" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M16 4h32v8h-32v-8z" fill="#000000"></path>
+								<path d="M60 16h-56c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4h12v16h32v-16h12c2.2 0 4-1.8 4-4v-20c0-2.2-1.8-4-4-4zM8 28c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zM44 56h-24v-20h24v20z" fill="#000000"></path>
+								</svg>
 
-									<svg class="icons" id="undo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M32 4c-8.837 0-16.836 3.582-22.627 9.374l-9.373-9.374v24h24l-8.971-8.97c4.344-4.343 10.343-7.030 16.971-7.030 13.254 0 24 10.745 24 24 0 7.169-3.143 13.602-8.126 18l5.292 6c6.644-5.864 10.834-14.442 10.834-24 0-17.673-14.327-32-32-32z" fill="#000000"></path>
-									</svg>
+								<svg class="icons" id="undo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M32 4c-8.837 0-16.836 3.582-22.627 9.374l-9.373-9.374v24h24l-8.971-8.97c4.344-4.343 10.343-7.030 16.971-7.030 13.254 0 24 10.745 24 24 0 7.169-3.143 13.602-8.126 18l5.292 6c6.644-5.864 10.834-14.442 10.834-24 0-17.673-14.327-32-32-32z" fill="#000000"></path>
+								</svg>
 
-									<svg class="icons" id="redo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 36c0 9.558 4.191 18.136 10.834 24l5.292-6c-4.983-4.398-8.126-10.831-8.126-18 0-13.255 10.746-24 24-24 6.628 0 12.627 2.687 16.971 7.030l-8.971 8.97h24v-24l-9.373 9.374c-5.791-5.791-13.79-9.374-22.627-9.374-17.673 0-32 14.327-32 32z" fill="#000000"></path>
-									</svg>
+								<svg class="icons" id="redo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 36c0 9.558 4.191 18.136 10.834 24l5.292-6c-4.983-4.398-8.126-10.831-8.126-18 0-13.255 10.746-24 24-24 6.628 0 12.627 2.687 16.971 7.030l-8.971 8.97h24v-24l-9.373 9.374c-5.791-5.791-13.79-9.374-22.627-9.374-17.673 0-32 14.327-32 32z" fill="#000000"></path>
+								</svg>
 
-									<svg class="icons" id="format" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M64 36v-24h-12v-4c0-2.2-1.8-4-4-4h-44c-2.2 0-4 1.8-4 4v12c0 2.2 1.8 4 4 4h44c2.2 0 4-1.8 4-4v-4h8v16h-36v8h-2c-1.105 0-2 0.895-2 2v20c0 1.105 0.895 2 2 2h8c1.105 0 2-0.895 2-2v-20c0-1.105-0.895-2-2-2h-2v-4h36zM48 12h-44v-4h44v4z" fill="#000000"></path>
-									</svg>
-									<svg class="icons" id="removeFormat" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 56h36v8h-36zM56 8h-18.91l-11.485 44h-8.268l11.485-44h-16.822v-8h44zM58.111 64l-8.111-8.111-8.111 8.111-3.889-3.889 8.111-8.111-8.111-8.111 3.889-3.889 8.111 8.111 8.111-8.111 3.889 3.889-8.111 8.111 8.111 8.111z" fill="#000000"></path>
-									</svg>
-								</div>
-								<div class="controlmenu" id="copypaste">
-									<svg class="icons" id="cut" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M57.114 42.481c-4.168-6.513-11.317-9.379-15.969-6.402-0.402 0.257-0.771 0.55-1.109 0.874l-4.966-7.766 11.466-17.998c0.938-1.733 1.285-3.797 0.829-5.873-0.436-1.984-1.532-3.652-3.006-4.827l-0.767-0.488-13.592 21.257-13.592-21.257-0.767 0.488c-1.474 1.174-2.571 2.842-3.006 4.827-0.456 2.076-0.109 4.14 0.829 5.873l11.466 17.998-4.966 7.766c-0.338-0.324-0.707-0.617-1.109-0.874-4.652-2.977-11.802-0.111-15.969 6.402s-3.775 14.205 0.877 17.182c4.652 2.977 11.802 0.111 15.969-6.402l10.268-16.117 10.268 16.117c4.168 6.513 11.317 9.379 15.969 6.402s5.044-10.67 0.877-17.182zM14.678 50.027c-1.876 2.931-4.283 4.358-5.911 4.715-0 0-0 0-0 0-0.531 0.117-1.268 0.188-1.77-0.133-0.556-0.356-0.925-1.297-0.987-2.517-0.101-1.978 0.603-4.302 1.931-6.377 1.876-2.932 4.283-4.358 5.91-4.715 0.531-0.117 1.269-0.188 1.771 0.133 0.556 0.356 0.925 1.297 0.987 2.517 0.101 1.978-0.602 4.303-1.93 6.377zM30 32c-1.105 0-2-0.895-2-2s0.895-2 2-2 2 0.895 2 2-0.895 2-2 2zM53.991 52.092c-0.062 1.221-0.431 2.161-0.987 2.517-0.502 0.321-1.24 0.25-1.77 0.133 0 0 0 0-0 0-1.627-0.357-4.035-1.784-5.911-4.715-1.328-2.075-2.031-4.399-1.93-6.377 0.062-1.22 0.431-2.161 0.987-2.517 0.502-0.321 1.24-0.249 1.771-0.133 1.627 0.357 4.034 1.784 5.91 4.715 1.328 2.075 2.031 4.399 1.931 6.377z" fill="#000000"></path>
-									</svg>
-									<svg class="icons" id="copy" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M40 16v-16h-28l-12 12v36h24v16h40v-48h-24zM12 5.657v6.343h-6.343l6.343-6.343zM4 44v-28h12v-12h20v12l-12 12v16h-20zM36 21.657v6.343h-6.343l6.343-6.343zM60 60h-32v-28h12v-12h20v40z" fill="#000000"></path>
-									</svg>
-									<svg class="icons" id="paste" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
-									<path d="M44 8h-8v-4c0-2.2-1.8-4-4-4h-8c-2.2 0-4 1.8-4 4v4h-8v8h32v-8zM32 8h-8v-3.993c0.002-0.002 0.005-0.005 0.007-0.007h7.985c0.003 0.002 0.005 0.005 0.007 0.007v3.993zM52 20v-10c0-1.1-0.9-2-2-2h-4v4h2v8h-12l-12 12v16h-16v-36h2v-4h-4c-1.1 0-2 0.9-2 2v40c0 1.1 0.9 2 2 2h18v12h40v-44h-12zM36 25.657v6.343h-6.343l6.343-6.343zM60 60h-32v-24h12v-12h20v36z" fill="#000000"></path>
-									</svg>
-								</div>
-								<div class="controlmenu" id="zoomControl">
-									<svg class="icons" id="zoomout" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M62.016 54.462l-15.16-12.893c-1.567-1.41-3.243-2.058-4.597-1.995 3.578-4.192 5.74-9.63 5.74-15.573 0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24c5.944 0 11.382-2.162 15.574-5.74-0.063 1.354 0.585 3.030 1.995 4.597l12.893 15.16c2.208 2.453 5.814 2.66 8.014 0.46s1.993-5.806-0.46-8.014zM24 40c-8.836 0-16-7.163-16-16s7.163-16 16-16 16 7.163 16 16-7.163 16-16 16zM12 20h24v8h-24z" fill="#000000"></path>
-									</svg>
-									<svg class="icons" id="zoomin" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M62.016 54.462l-15.16-12.893c-1.567-1.41-3.243-2.058-4.597-1.995 3.578-4.192 5.74-9.63 5.74-15.573 0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24c5.944 0 11.382-2.162 15.574-5.74-0.063 1.354 0.585 3.030 1.995 4.597l12.893 15.16c2.208 2.453 5.814 2.66 8.014 0.46s1.993-5.806-0.46-8.014zM24 40c-8.836 0-16-7.163-16-16s7.163-16 16-16 16 7.163 16 16-7.163 16-16 16zM28 12h-8v8h-8v8h8v8h8v-8h8v-8h-8z" fill="#000000"></path>
-									</svg>
-								</div>
-								<div class="controlmenu" id="formatControl">
-									<svg class="icons ql-bold" id="bold" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M44.242 30.291c2.344-2.784 3.758-6.375 3.758-10.291 0-8.822-7.178-16-16-16h-20v56h24c8.822 0 16-7.178 16-16 0-5.81-3.112-10.906-7.758-13.709zM24 12h6.344c3.498 0 6.344 3.589 6.344 8s-2.846 8-6.344 8h-6.344v-16zM33.938 52h-9.938v-16h9.938c3.653 0 6.625 3.589 6.625 8s-2.972 8-6.625 8z" fill="#000000"></path>
-									</svg>
-									<svg class="icons ql-underline" id="underline" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M44 4h8v26c0 9.941-8.954 18-20 18s-20-8.059-20-18v-26h8v26c0 2.51 1.14 4.919 3.21 6.782 2.306 2.075 5.428 3.218 8.79 3.218s6.484-1.143 8.79-3.218c2.070-1.863 3.21-4.271 3.21-6.782v-26zM12 52h40v8h-40z" fill="#000000"></path>
-									</svg>
-									<svg class="icons ql-italic" id="italic" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M56 4v4h-8l-20 48h8v4h-28v-4h8l20-48h-8v-4z" fill="#000000"></path>
-									</svg>
-									<svg class="icons ql-strike" id="strike" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M64 32v4h-14.657c1.719 2.407 2.657 5.168 2.657 8 0 4.43-2.291 8.689-6.286 11.685-3.71 2.782-8.58 4.315-13.714 4.315s-10.004-1.532-13.714-4.315c-3.995-2.996-6.286-7.255-6.286-11.685h8c0 4.336 5.495 8 12 8s12-3.664 12-8c0-4.336-5.495-8-12-8h-32v-4h18.72c-0.146-0.103-0.291-0.208-0.434-0.315-3.995-2.996-6.286-7.255-6.286-11.685s2.291-8.689 6.286-11.685c3.71-2.782 8.58-4.315 13.714-4.315s10.004 1.532 13.714 4.315c3.995 2.996 6.286 7.255 6.286 11.685h-8c0-4.336-5.495-8-12-8s-12 3.664-12 8c0 4.336 5.495 8 12 8 4.936 0 9.628 1.417 13.28 4h18.72z" fill="#000000"></path>
-									</svg>
-								</div>
-								<div class="controlmenu" id="fontselector">
-									<select class="ql-font">
-									  <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
-									  <!--<option value="comicsans">Comic Sans</option>-->
-									  <!--<option value="cambria">Cambria</option>-->
-									  <option value="Arial, Helvetica, sans-serif">Arial</option>
-                    <!--<option value="Georgia, serif">Serif</option>-->
-                    <!--<option value="Monaco, 'Courier New', monospace">Monospace</option>-->
-									</select>
-									<!--<input type="text" id="fontsize" name="numeric" size="4" value="1px" class='numberonly ql-size'/>-->
-                  <select class="ql-size">
-                    <option value="8px" >8</option>
-                    <option value="12px" >12</option>
-                    <option value="18px" >18</option>
-                  </select> <!--Options generated in Javascript-->
-                  <!--May need a workaround for the sake of using Quill's automatic font-size handling-->
-                  <!--<select class="ql-size hidden"></select>-->
-									</form>
-								</div>
+								<svg class="icons" id="format" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M64 36v-24h-12v-4c0-2.2-1.8-4-4-4h-44c-2.2 0-4 1.8-4 4v12c0 2.2 1.8 4 4 4h44c2.2 0 4-1.8 4-4v-4h8v16h-36v8h-2c-1.105 0-2 0.895-2 2v20c0 1.105 0.895 2 2 2h8c1.105 0 2-0.895 2-2v-20c0-1.105-0.895-2-2-2h-2v-4h36zM48 12h-44v-4h44v4z" fill="#000000"></path>
+								</svg>
+								<svg class="icons" id="removeFormat" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 56h36v8h-36zM56 8h-18.91l-11.485 44h-8.268l11.485-44h-16.822v-8h44zM58.111 64l-8.111-8.111-8.111 8.111-3.889-3.889 8.111-8.111-8.111-8.111 3.889-3.889 8.111 8.111 8.111-8.111 3.889 3.889-8.111 8.111 8.111 8.111z" fill="#000000"></path>
+								</svg>
+							</div>
+							<div class="controlmenu" id="copypaste">
+								<svg class="icons" id="cut" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M57.114 42.481c-4.168-6.513-11.317-9.379-15.969-6.402-0.402 0.257-0.771 0.55-1.109 0.874l-4.966-7.766 11.466-17.998c0.938-1.733 1.285-3.797 0.829-5.873-0.436-1.984-1.532-3.652-3.006-4.827l-0.767-0.488-13.592 21.257-13.592-21.257-0.767 0.488c-1.474 1.174-2.571 2.842-3.006 4.827-0.456 2.076-0.109 4.14 0.829 5.873l11.466 17.998-4.966 7.766c-0.338-0.324-0.707-0.617-1.109-0.874-4.652-2.977-11.802-0.111-15.969 6.402s-3.775 14.205 0.877 17.182c4.652 2.977 11.802 0.111 15.969-6.402l10.268-16.117 10.268 16.117c4.168 6.513 11.317 9.379 15.969 6.402s5.044-10.67 0.877-17.182zM14.678 50.027c-1.876 2.931-4.283 4.358-5.911 4.715-0 0-0 0-0 0-0.531 0.117-1.268 0.188-1.77-0.133-0.556-0.356-0.925-1.297-0.987-2.517-0.101-1.978 0.603-4.302 1.931-6.377 1.876-2.932 4.283-4.358 5.91-4.715 0.531-0.117 1.269-0.188 1.771 0.133 0.556 0.356 0.925 1.297 0.987 2.517 0.101 1.978-0.602 4.303-1.93 6.377zM30 32c-1.105 0-2-0.895-2-2s0.895-2 2-2 2 0.895 2 2-0.895 2-2 2zM53.991 52.092c-0.062 1.221-0.431 2.161-0.987 2.517-0.502 0.321-1.24 0.25-1.77 0.133 0 0 0 0-0 0-1.627-0.357-4.035-1.784-5.911-4.715-1.328-2.075-2.031-4.399-1.93-6.377 0.062-1.22 0.431-2.161 0.987-2.517 0.502-0.321 1.24-0.249 1.771-0.133 1.627 0.357 4.034 1.784 5.91 4.715 1.328 2.075 2.031 4.399 1.931 6.377z" fill="#000000"></path>
+								</svg>
+								<svg class="icons" id="copy" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M40 16v-16h-28l-12 12v36h24v16h40v-48h-24zM12 5.657v6.343h-6.343l6.343-6.343zM4 44v-28h12v-12h20v12l-12 12v16h-20zM36 21.657v6.343h-6.343l6.343-6.343zM60 60h-32v-28h12v-12h20v40z" fill="#000000"></path>
+								</svg>
+								<svg class="icons" id="paste" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+								<path d="M44 8h-8v-4c0-2.2-1.8-4-4-4h-8c-2.2 0-4 1.8-4 4v4h-8v8h32v-8zM32 8h-8v-3.993c0.002-0.002 0.005-0.005 0.007-0.007h7.985c0.003 0.002 0.005 0.005 0.007 0.007v3.993zM52 20v-10c0-1.1-0.9-2-2-2h-4v4h2v8h-12l-12 12v16h-16v-36h2v-4h-4c-1.1 0-2 0.9-2 2v40c0 1.1 0.9 2 2 2h18v12h40v-44h-12zM36 25.657v6.343h-6.343l6.343-6.343zM60 60h-32v-24h12v-12h20v36z" fill="#000000"></path>
+								</svg>
+							</div>
+							<div class="controlmenu" id="zoomControl">
+								<svg class="icons" id="zoomout" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M62.016 54.462l-15.16-12.893c-1.567-1.41-3.243-2.058-4.597-1.995 3.578-4.192 5.74-9.63 5.74-15.573 0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24c5.944 0 11.382-2.162 15.574-5.74-0.063 1.354 0.585 3.030 1.995 4.597l12.893 15.16c2.208 2.453 5.814 2.66 8.014 0.46s1.993-5.806-0.46-8.014zM24 40c-8.836 0-16-7.163-16-16s7.163-16 16-16 16 7.163 16 16-7.163 16-16 16zM12 20h24v8h-24z" fill="#000000"></path>
+								</svg>
+								<svg class="icons" id="zoomin" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M62.016 54.462l-15.16-12.893c-1.567-1.41-3.243-2.058-4.597-1.995 3.578-4.192 5.74-9.63 5.74-15.573 0-13.255-10.745-24-24-24s-24 10.745-24 24 10.745 24 24 24c5.944 0 11.382-2.162 15.574-5.74-0.063 1.354 0.585 3.030 1.995 4.597l12.893 15.16c2.208 2.453 5.814 2.66 8.014 0.46s1.993-5.806-0.46-8.014zM24 40c-8.836 0-16-7.163-16-16s7.163-16 16-16 16 7.163 16 16-7.163 16-16 16zM28 12h-8v8h-8v8h8v8h8v-8h8v-8h-8z" fill="#000000"></path>
+								</svg>
+							</div>
+							<div class="controlmenu" id="formatControl">
+								<svg class="icons ql-bold" id="bold" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M44.242 30.291c2.344-2.784 3.758-6.375 3.758-10.291 0-8.822-7.178-16-16-16h-20v56h24c8.822 0 16-7.178 16-16 0-5.81-3.112-10.906-7.758-13.709zM24 12h6.344c3.498 0 6.344 3.589 6.344 8s-2.846 8-6.344 8h-6.344v-16zM33.938 52h-9.938v-16h9.938c3.653 0 6.625 3.589 6.625 8s-2.972 8-6.625 8z" fill="#000000"></path>
+								</svg>
+								<svg class="icons ql-underline" id="underline" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M44 4h8v26c0 9.941-8.954 18-20 18s-20-8.059-20-18v-26h8v26c0 2.51 1.14 4.919 3.21 6.782 2.306 2.075 5.428 3.218 8.79 3.218s6.484-1.143 8.79-3.218c2.070-1.863 3.21-4.271 3.21-6.782v-26zM12 52h40v8h-40z" fill="#000000"></path>
+								</svg>
+								<svg class="icons ql-italic" id="italic" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M56 4v4h-8l-20 48h8v4h-28v-4h8l20-48h-8v-4z" fill="#000000"></path>
+								</svg>
+								<svg class="icons ql-strike" id="strike" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M64 32v4h-14.657c1.719 2.407 2.657 5.168 2.657 8 0 4.43-2.291 8.689-6.286 11.685-3.71 2.782-8.58 4.315-13.714 4.315s-10.004-1.532-13.714-4.315c-3.995-2.996-6.286-7.255-6.286-11.685h8c0 4.336 5.495 8 12 8s12-3.664 12-8c0-4.336-5.495-8-12-8h-32v-4h18.72c-0.146-0.103-0.291-0.208-0.434-0.315-3.995-2.996-6.286-7.255-6.286-11.685s2.291-8.689 6.286-11.685c3.71-2.782 8.58-4.315 13.714-4.315s10.004 1.532 13.714 4.315c3.995 2.996 6.286 7.255 6.286 11.685h-8c0-4.336-5.495-8-12-8s-12 3.664-12 8c0 4.336 5.495 8 12 8 4.936 0 9.628 1.417 13.28 4h18.72z" fill="#000000"></path>
+								</svg>
+							</div>
+							<div class="controlmenu" id="fontselector">
+								<select class="ql-font">
+								  <option value="timesnewroman">Times New Roman</option>
+								  <option value="comicsans">Comic Sans</option>
+								  <option value="cambria">Cambria</option>
+								  <option value="arial" selected="">Arial</option>
+								</select>
+								<select class="ql-size">
+								  <option value="small">Small</option>
+								  <option value="normal" selected>Normal</option>
+								  <option value="large">Large</option>
+								  <option value="huge">Huge</option>
+								</select>
+<!-- 								ADD ql-color and ql-backround -->
+							</div>
+							<div class="controlmenu" id="paragraphControls">
+								<svg class="icons" id="rightjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
+								</svg>
 
-								<div class="controlmenu" id="paragraphControls">
-									<svg class="icons" id="rightjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
-									</svg>
+								<svg class="icons" id="centerjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 4h64v8h-64zM12 16h40v8h-40zM12 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
+								</svg>
 
-									<svg class="icons" id="centerjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 4h64v8h-64zM12 16h40v8h-40zM12 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
-									</svg>
+								<svg class="icons" id="leftjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 4h64v8h-64zM24 16h40v8h-40zM24 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
+								</svg>
 
-									<svg class="icons" id="leftjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 4h64v8h-64zM24 16h40v8h-40zM24 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
-									</svg>
+								<svg class="icons" id="justjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 4h64v8h-64zM0 16h64v8h-64zM0 28h64v8h-64zM0 40h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
+								</svg>
+							</div>
+							<div class="controlmenu"  id="indentControl">
+								<svg class="icons" id="inindent" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 4h64v8h-64zM24 16h40v8h-40zM24 28h40v8h-40zM24 40h40v8h-40zM0 52h64v8h-64zM0 44v-24l16 12z" fill="#000000"></path>
+								</svg>
 
-									<svg class="icons" id="justjus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 4h64v8h-64zM0 16h64v8h-64zM0 28h64v8h-64zM0 40h64v8h-64zM0 52h64v8h-64z" fill="#000000"></path>
-									</svg>
-								</div>
-
-								<div class="controlmenu"  id="indentControl">
-									<svg class="icons" id="inindent" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 4h64v8h-64zM24 16h40v8h-40zM24 28h40v8h-40zM24 40h40v8h-40zM0 52h64v8h-64zM0 44v-24l16 12z" fill="#000000"></path>
-									</svg>
-
-									<svg class="icons" id="deindent" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 4h64v8h-64zM24 16h40v8h-40zM24 28h40v8h-40zM24 40h40v8h-40zM0 52h64v8h-64zM16 20v24l-16-12z" fill="#000000"></path>
-									</svg>
-								</div>
-								<div class="controlmenu" id="listControl">
-									<svg class="icons" id="numlist" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 64 64">
-									<path d="M24 52h40v8h-40zM24 28h40v8h-40zM24 4h40v8h-40zM12 0v16h-4v-12h-4v-4zM8 32.875v3.125h8v4h-12v-9.125l8-3.75v-3.125h-8v-4h12v9.125zM16 44v20h-12v-4h8v-4h-8v-4h8v-4h-8v-4z" fill="#000000"></path>
-									</svg>
-									<svg class="icons" id="bullist" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-									<path d="M0 0h16v16h-16zM24 4h40v8h-40zM0 24h16v16h-16zM24 28h40v8h-40zM0 48h16v16h-16zM24 52h40v8h-40z" fill="#000000"></path>
-									</svg>
-								</div>
-              </div>
-            </div>
-          </div>
-          <div id="editor">
-            <textarea id="type">
-            </textarea>
-          </div>
+								<svg class="icons" id="deindent" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 4h64v8h-64zM24 16h40v8h-40zM24 28h40v8h-40zM24 40h40v8h-40zM0 52h64v8h-64zM16 20v24l-16-12z" fill="#000000"></path>
+								</svg>
+							</div>
+							<div class="controlmenu" id="listControl">
+								<svg class="icons" id="numlist" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 64 64">
+								<path d="M24 52h40v8h-40zM24 28h40v8h-40zM24 4h40v8h-40zM12 0v16h-4v-12h-4v-4zM8 32.875v3.125h8v4h-12v-9.125l8-3.75v-3.125h-8v-4h12v9.125zM16 44v20h-12v-4h8v-4h-8v-4h8v-4h-8v-4z" fill="#000000"></path>
+								</svg>
+								<svg class="icons" id="bullist" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+								<path d="M0 0h16v16h-16zM24 4h40v8h-40zM0 24h16v16h-16zM24 28h40v8h-40zM0 48h16v16h-16zM24 52h40v8h-40z" fill="#000000"></path>
+								</svg>
+							</div>	
+						</div>
+					</div>
+					<div id="editor">
+						<textarea id="type">
+						</textarea>
+					</div>
 				</div>
+				<div id="sidebar">
+					<div id="sideheader">
+						<h1>Syntax Guide</h1>
+						<br>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est diam, congue non efficitur non, interdum ut nibh. Integer a ipsum porta, blandit libero sit amet, imperdiet erat. Cras vulputate enim erat, eget maximus ex rhoncus non. Curabitur laoreet est sit amet augue tempus mollis et vel nisl. Curabitur congue, eros ac pretium molestie, magna massa porttitor enim, eu condimentum ligula metus eu lorem. Fusce consequat risus ac magna rhoncus, id euismod augue finibus. Fusce faucibus venenatis dignissim. Sed hendrerit congue lacus, at posuere odio placerat eget. Morbi congue erat ac sapien volutpat, eu molestie felis sagittis. Sed a maximus elit. Praesent nec laoreet sem. Proin non pretium tellus, eget gravida nisi.
+						<h2>Quiz Options</h2>
+						<h3>Length:</h3>
+						<input size="4" type="text" id="qLength" name="numeric" value="" class='numberonly'/>questions.
+						<br><br>
+						<input class="md-trigger" data-modal="modal-1" type="button" id="b" value="Generate Quiz" />
+					</div>
+				</div>
+		</div>
+			<div class="md-modal md-effect-1" id="modal-1">
+				<div class="md-content">
+					<div id="thequiz">
+						<div id="quizHead">
+							<button class="md-close">Quit</button>
+					</div>
+					<div id="wrapper">
+						<h2> Quinote </h2>
+						<div id="quiz.container">
+							<div id="quizopener">
+								Your quiz is ready! Click start to begin!
+								<input type="button" id="b1" value="Begin" onclick="showQuiz(); randomizeQuiz();"/>
+							</div>
+							<div id="quizframe">
+								<div id="question">
+								</div>
+								<div id="checkCon">
+									<div id="check">
+										<div id="one"> 
+											<h3>Correct</h3>
+										</div>
+										<div id="two">
+											<h3>Incorrect</h3>
+										</div>
+									</div>
+								</div>
+								<div id="meow">
+									<div id="answer_choice">
+										<form id="form1" action="">
+										<input type="radio" id="a1" name="rd" value="" /><label id="rad1"></label><br/>
+										<input type="radio" id="a2" name="rd" value="" /><label id="rad2"></label><br/>
+										<input type="radio" id="a3" name="rd" value="" /><label id="rad3"></label><br/>
+										<input type="radio" id="a4" name="rd" value="" /><label id="rad4"></label><br/>
+										</form>
+									</div>
+									<div id="answer_text">
+										<form id="form2" action="">
+										fill in the blank: <input type="text" id="ansText" size="20" />
+										</form>
+									</div>
+									<div id="answer_check">
+										<form id="form3" action="">
+										<input type="radio" id="true" name="ch" value="" /><label id="che1">True</label><br/>
+										<input type="radio" id="false" name="ch" value="" /><label id="che1">False</label>
+										</form>
+									</div>
+								</div>
+								<ul>
+									<input type="button" id="b2" value="Next Question" onclick="randomizeQuiz();" />
+									<input type="button" id="checker" value="Check Answer" onclick="checkAnswer();" />
+								</ul>
+							</div>
+							<div id="scorepage">
+								<div id="mad">
+									<input type="text" id="scr"  size="4" />
+								</div>
+								<div id="the">
+									<div id="leaf">  
+										<svg width="250" height="250" viewBox="0 0 500 500" enable-background="new 0 0 500 500">
+											<defs>
+												<filter id="sun">
+													<feGaussianBlur stdDeviation="6" result="blur1" />
+													<feSpecularLighting result="spec1" in="blur1" specularExponent="60" lighting-color="#cccccc">
+														<fePointLight x="100" y="200" z="400" />
+													</feSpecularLighting>
+													<feComposite in="SourceGraphic" in2="spec1" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
 
-        <div id="sidebar">
-          <div id="sideheader">
-            <h1>Syntax Guide</h1>
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est diam, congue non efficitur non, interdum ut nibh. Integer a ipsum porta, blandit libero sit amet, imperdiet erat. Cras vulputate enim erat, eget maximus ex rhoncus non. Curabitur laoreet est sit amet augue tempus mollis et vel nisl. Curabitur congue, eros ac pretium molestie, magna massa porttitor enim, eu condimentum ligula metus eu lorem. Fusce consequat risus ac magna rhoncus, id euismod augue finibus. Fusce faucibus venenatis dignissim. Sed hendrerit congue lacus, at posuere odio placerat eget. Morbi congue erat ac sapien volutpat, eu molestie felis sagittis. Sed a maximus elit. Praesent nec laoreet sem. Proin non pretium tellus, eget gravida nisi.
+												</filter>
+											</defs>
+											<g class="leaf" filter="url(#sun)">
+												<path fill="rgb(79,165,66)" stroke="rgb(79,165,66)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M 233.21155,492.22786 C 233.98616,471.75242 251.22846,452.05745 251.38960,429.62892 C 252.32905,409.25169 234.85925,382.07976 212.05321,389.97941 C 188.03192,392.71376 166.98539,402.30706 142.30997,401.68752 C 132.01720,400.03054 119.37201,406.52439 110.56550,400.04992 C 112.18999,379.24941 74.946361,388.10781 74.657550,368.08388 C 91.965303,355.91297 55.180935,354.52425 60.424240,338.60461 C 52.359075,326.80250 14.760704,313.30866 45.087753,306.34454 C 54.798998,297.56738 92.105866,296.42655 66.309952,280.77412 C 65.309671,268.81503 61.700871,258.38368 50.640016,248.88520 C 65.467568,240.94221 55.214067,221.18928 56.207216,205.63316 C 48.313270,188.89165 55.561809,181.66500 72.872616,187.32833 C 81.453486,191.57816 84.558935,178.48902 92.526763,182.65888 C 107.01921,187.23191 111.76013,166.59332 126.06274,180.07715 C 121.74347,166.91233 106.75056,134.90361 135.39776,146.36321 C 153.07807,144.53038 121.17963,101.89140 149.02854,112.09189 C 176.17766,111.10602 142.39184,61.903407 173.54931,68.680691 C 180.29181,48.635309 198.60100,33.887614 201.38627,10.376687 C 207.49661,-7.5658959 223.12513,27.981016 233.43492,31.120472 C 240.33484,53.763351 270.48574,51.229455 274.44674,73.819230 C 291.61447,71.886897 281.71211,103.30965 301.06407,91.085951 C 325.85361,79.950609 291.82983,138.02612 324.06796,124.21799 C 337.50016,127.34248 311.65566,168.92775 330.58211,148.20145 C 334.85423,132.99827 343.29682,134.47422 352.44561,144.49852 C 371.48868,130.27877 395.54806,139.55227 416.20980,128.02608 C 421.39372,129.85460 416.54888,154.88683 421.57199,164.61134 C 425.06989,176.72298 431.72986,185.06584 421.56131,198.17513 C 423.77327,207.57368 444.53161,206.55986 429.54038,219.24937 C 414.70208,234.19996 414.59820,252.81782 406.09641,268.99296 C 426.52230,271.69383 446.33490,277.40221 466.55041,282.68920 C 464.60670,292.25867 439.36691,305.30121 437.46624,321.25612 C 423.56217,327.10336 444.02077,343.99576 423.27844,346.13682 C 401.16276,350.46473 440.32079,373.58591 411.43832,373.47339 C 392.02865,375.99790 382.12424,399.46556 361.41839,393.11491 C 340.65917,382.14126 320.87243,395.50831 302.37265,382.86115 C 274.86149,372.38010 259.57514,397.20372 255.78965,421.65832 C 252.43892,444.29534 244.89870,466.52247 245.30551,489.56670 C 244.55648,495.25405 236.42905,496.22697 233.21155,492.22786 z " />
+											</g>
+										</svg>
+									</div>
+									<div id="no">
+										<svg width="250" height="250" viewBox="0 0 200 300"
+											xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+											<defs>
+												<path id="MyPath" d="M10 80 Q 95 10 180 80" />
+											</defs>
+											<text text-anchor="start" font-size="32">
+												<textPath xlink:href="#MyPath">
+												You Scored:
+												</textPath>
+											</text>
+										</svg>
+									</div>
+									<div id="wha">
+										<svg height="310" width="310">
+											<circle cx="160" cy="160" r="145" stroke="#E4D6E4" stroke-width="3" fill="#F9F6F9" />
+										</svg>
+									</div>
+									<div id="sco">
+										WHAA
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button>?</button>
+					<footer>Quinote 2015</footer>
+				</div>
+			</div>
+		</div>
+		<div class="dialogShadow"></div>
+
+			<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+			
+			<script type="text/javascript" src="../../../../Downloads/Quinote-First-Draft-master/src/frontend/js/questions.js"></script>
+			<script type="text/javascript" src="../../../../Downloads/Quinote-First-Draft-master/src/frontend/js/frontend.js"></script>
+			<script type="text/javascript" src="../../../../Downloads/Quinote-First-Draft-master/src/frontend/js/classie.js"></script>
 
 
-            <h2>Quiz Options</h2>
-            <h3>Length:</h3>
-            <input size="4" type="text" id="qLength" name="numeric" value="" class='numberonly'/>questions.
-            </form>
-            <br><br>
-            <input class="md-trigger" data-modal="modal-1" type="button" id="b" value="Generate Quiz" />
-          </div>
-        </div>
-
-        <div class="md-modal md-effect-1" id="modal-1">
-          <div class="md-content">
-            <div id="thequiz">
-              <div id="quizHead">
-                <button class="md-close">Quit</button>
-              </div>
-              <div id="wrapper">
-                <h2> Quinote </h2>
-                <div id="quiz.container">
-                  <div id="quizopener">
-                    Your quiz is ready! Click start to begin!
-                    <input type="button" id="b1" value="Begin" onclick="showQuiz(); randomizeQuiz();"/>
-                  </div>
-                  <div id="quizframe">
-                    <div id="question">
-                    </div>
-                    <div id="checkCon">
-                      <div id="check">
-                        <div id="one">
-                          <h3>Correct</h3>
-                        </div>
-                        <div id="two">
-                          <h3>Incorrect</h3>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="meow">
-                      <div id="answer_choice">
-                        <form id="form1" action="">
-                        <input type="radio" id="a1" name="rd" value="" /><label id="rad1"></label><br/>
-                        <input type="radio" id="a2" name="rd" value="" /><label id="rad2"></label><br/>
-                        <input type="radio" id="a3" name="rd" value="" /><label id="rad3"></label><br/>
-                        <input type="radio" id="a4" name="rd" value="" /><label id="rad4"></label><br/>
-                        </form>
-                      </div>
-                      <div id="answer_text">
-                        <form id="form2" action="">
-                        fill in the blank: <input type="text" id="ansText" size="20" />
-                        </form>
-                      </div>
-                      <div id="answer_check">
-                        <form id="form3" action="">
-                        <input type="radio" id="true" name="ch" value="" /><label id="che1">True</label><br/>
-                        <input type="radio" id="false" name="ch" value="" /><label id="che1">False</label>
-                        </form>
-                      </div>
-                    </div>
-                    <ul>
-                    <input type="button" id="b2" value="Next Question" onclick="randomizeQuiz();" />
-                    <input type="button" id="checker" value="Check Answer" onclick="checkAnswer();" />
-                    </ul>
-                  </div>
-                  <div id="scorepage">
-                    <div id="scoreResult">
-                      <b>Total Score: </b> <input type="text" id="scr"  size="4" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button>?</button>
-              <footer>Quinote 2015</footer>
-            </div>
-          </div>
-        </div>
+		    <!--Editor scripts-->
+		 <script type="text/javascript" src="../../../../Downloads/Quinote-First-Draft-master/quill/quill.min.js"></script>
+		<script type="text/javascript" src="../../../../Downloads/Quinote-First-Draft-master/src/editor/editor.js"></script>
 
 
-		    <div class="dialogShadow"></div>
-
-      </div>
-    </div>
-
-
-		<script src="js/classie.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/frontend.js"></script>
-
-    <!--Editor scripts-->
-    <script type="text/javascript" src="../editor/editor.js"></script>
-    <script type="text/javascript" src="../../quill/quill.min.js"></script>
 
 	</body>
 </html>
