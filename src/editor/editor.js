@@ -22,7 +22,7 @@ var main = function() {
     editor = new Quill('#editor', {
         modules: {
             'toolbar': {
-                container: '#editorToolbar'
+                container: '#toolbar'
             }
         },
         styles: false
@@ -51,8 +51,8 @@ var main = function() {
 
 
     // Set up initial environment
-    resizeEditor();
-    //editor.focus();
+    //resizeEditor();
+    editor.focus();
     //$.each([8, 10, 12, 14, 16, 18, 24, 30, 36, 48, 72, 96], function(index, value) {
     //    var fSize = $('.ql-size');
     //    fSize.append($('<option value=' + this.value + '>' + value + '</option>'));
