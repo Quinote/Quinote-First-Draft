@@ -150,7 +150,7 @@ function generateRandomNum(){
 }
 function checkPage(){
 	document.getElementById("buttonCheck").style.display="none";
-	document.getElementById("buttonNext").style.display="none";
+	document.getElementById("buttonNext").style.display="visible";
 }
 function randomizeQuiz(){
 	document.getElementById("answerSelections").style.visibility="";
