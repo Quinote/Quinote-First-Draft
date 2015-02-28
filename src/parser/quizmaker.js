@@ -78,16 +78,19 @@ function Quiz(questions) {
 
 ////////////////////////
 
-function OptionList() {
+function OptionList(numberMC, numberFITB, numberTF) {
 	// specifies the settings for quiz generation
 	
 	// limited for testing purposes
-	this.numberOfQuestions = 11;
+	this.numberOfQuestions = numberMC + numberFITB + numberTF;
+	this.numberMultipleChoice = numberMC;
+	this.numberFITB = numberFITB;
+	this.numberTF = numberTF;
 	
 	this.questionTypes = {
-		"Multiple choice": 4, 
-		"Fill-in-the-blank": 4, 
-		"True or false": 3
+		"Multiple choice": mc, 
+		"Fill-in-the-blank": fitb, 
+		"True or false": tf
 	};
 }
 
@@ -149,7 +152,7 @@ function FillInTheBlankQuestion(definitionString, startIndex, stopIndex, answer)
 
 function makeQuiz(parseResult, optionList) {
 	if (typeof optionList === "undefined") {
-		optionList = new OptionList();
+		optionList = new OptionList(10, 0, 0);
 	}
 	
 	var generatedQuestions = [];
@@ -161,7 +164,7 @@ function makeQuiz(parseResult, optionList) {
 		console.log("Error: not enough identifiers found to make " + numberOfQuestions + " questions");
 	}
 	
-	for (var i = 0; i<optionList.questionTypes["Multiple choice"]; i++) {
+	for (var i = 0; i<optionList.numberMC; i++) {
 		var newQuestion = undefined;
 		
 		// call makeMultipleChoiceQuestion until non-null result is found
@@ -177,7 +180,7 @@ function makeQuiz(parseResult, optionList) {
 		}
 		generatedQuestions.push(newQuestion);
 	}
-	for (var i = 0; i<optionList.questionTypes["Fill-in-the-blank"]; i++) {
+	for (var i = 0; i<optionList.numberFITB; i++) {
 		var newQuestion = undefined;
 		
 		// call makeMultipleChoiceQuestion until non-null result is found
@@ -194,7 +197,7 @@ function makeQuiz(parseResult, optionList) {
 		
 		generatedQuestions.push(newQuestion);
 	}
-	for (var i = 0; i<optionList.questionTypes["True or false"]; i++) {
+	for (var i = 0; i<optionList.numberTF; i++) {
 		var newQuestion = undefined;
 		
 		// call makeMultipleChoiceQuestion until non-null result is found
