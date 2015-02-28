@@ -5,11 +5,11 @@
 $('#b').click(function(){
 	$('#quizframe').toggle();
 	$('#scorepage').toggle();
-	$('#modal-1').css("z-index", "4");
+	$('#quizDialog').css("z-index", "4");
 
 });
 $('#md-close').click(function(){
-	$('#modal-1').css("z-index", "-10");
+	$('#quizDialog').css("z-index", "-10");
 });
 
 $('#b1').click(function(){
@@ -270,17 +270,16 @@ var dialog = (function() {
 	function init() {
 		var overlay = document.querySelector( '.dialogShadow' );
 		[].slice.call( document.querySelectorAll( '.dialogTrigger' ) ).forEach( function( el, i ) {
-			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+			var modal = document.querySelector( '#quizDialog' ),
 			close = modal.querySelector( '.dialogClose' );
 			function removeModal() {
-				classie.remove( modal, 'dialogVisable' );
-				
+				$("#quizDialog").removeClass("dialogVisable");
 			}
 			function removeModalHandler() {
 				removeModal();
 			}
 			el.addEventListener( 'click', function( ev ) {
-				classie.add( modal, 'dialogVisable' );
+				$("#quizDialog").addClass("dialogVisable");
 			});
 			close.addEventListener( 'click', function( ev ) {
 				removeModalHandler();
