@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <script src="https://apis.google.com/js/client.js"></script>
+    
+    <script type="text/javascript">
+      var CLIENT_ID = '526842392555-28flrr7rakr08ofmoupm7b9umkhl13o4.apps.googleusercontent.com';
+      var SCOPES = [
+          'https://www.googleapis.com/auth/drive'
+          // Add other scopes needed by your application. in comma seperated list
+        ];
+
+      /**
+       * Called when the client library is loaded.
+       */
+      function handleClientLoad() {
+        checkAuth();
+        console.log('authorized');
+      }
+      
+      function driveStuff() {
+
+        //printFile(fileId);
+        
+        if (gapi.client) { console.log('It sees the client'); }
+        var res = gapi.client.load('drive','v2', console.log('Should have loaded'));
+        console.log(res);
+        
+        if (gapi.client.drive) { console.log('It sees the drive'); }
+        //if (gapi.client.drive.files) { console.log("It sees the files"); }
+        
+      }
+
+      /**
+       * Check if the current user has authorized the application.
+       */
+      function checkAuth() {
+        gapi.auth.authorize(
+            {'client_id': CLIENT_ID, 'scope': SCOPES.join(' '), 'immediate': true},
+            handleAuthResult);
+      }
+
+	/**
+	 * Load the Drive API client.
+	 * @param {Function} callback Function to call when the client is loaded.
+	 */
+	function loadClient(callback) {
+	  gapi.client.load('drive', 'v2', callback);
+	}
+
+      /**
+       * Called when authorization server replies.
+       *
+       * @param {Object} authResult Authorization result.
+       */
+      function handleAuthResult(authResult) {
+        if (authResult) {
+          // Access token has been successfully retrieved, requests can be sent to the API
+          console.log(authResult);
+        } else {
+          // No access token could be retrieved, force the authorization flow (by setting immediate to false).
+          console.log('no token received, try to force auth flow');
+          gapi.auth.authorize(
+              {'client_id': CLIENT_ID, 'scope': SCOPES, 'immediate': false},
+              handleAuthResult);
+        }
+      }
+      
+      /* Print a files metadata.
+  @param {String} fileId ID of the file to print metadata for. */
+  
+function printFile() {
+         var fileId = '0BzyCBwx5XmTBYUxodWE4YkNobFk'; //hanging onto this instead of accessing dynamically, for debugging purposes
+
+var request = gapi.client.request({
+        'path': '/drive/v2/files',
+        'method': 'GET',
+        'params': {'maxResults': '1'}
+        });
+	console.log(request);
+
+request.execute(function(resp) {          
+        for (i=0; i<resp.items.length; i++) {
+            var titulo = resp.items[i].title;
+            var fechaUpd = resp.items[i].modifiedDate;
+            var userUpd = resp.items[i].lastModifyingUserName;
+            var userEmbed = resp.items[i].embedLink;
+            var userAltLink = resp.items[i].alternateLink;
+
+            var fileInfo = document.createElement('li');
+            fileInfo.appendChild(document.createTextNode('TITLE: ' + titulo + ' - LAST MODIF: ' + fechaUpd + ' - BY: ' + userUpd ));                
+            document.getElementById('content').appendChild(fileInfo);
+        }
+    });   
+}
+      
+    </script>
+  </head>
+  <body>
+    Here is the page. howdy.
+    
+    <button onclick="handleClientLoad();">Authorize</button>
+    <button onclick="driveStuff();">Try to get file</button>
+    <button onclick="printFile();">Try to print file meta</button>
+    <div id='content'></div>
+  </body>
+</html>

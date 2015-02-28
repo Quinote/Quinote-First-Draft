@@ -1,0 +1,39 @@
+<html>
+
+<!--Author: Simone
+Group: QuiNote
+
+Simple example getting login from user and printing the auth token to the console
+Only works when it lives at quinote.com/index.html, but saved for reference
+Strangely, onload functions do not get called, but apis seem to be working... need to inspect
+-->
+
+  <head>
+  
+    <script src="client.js?onload=test"></script>  
+    <script src="https://apis.google.com/js/client.js?onload=test2"></script>
+    <script>
+      function test() {
+       console.log('reached local');
+       }
+       function test2() {
+       console.log('reached google');
+       }
+    
+      function auth() {
+        var config = {
+          'client_id': '526842392555-28flrr7rakr08ofmoupm7b9umkhl13o4.apps.googleusercontent.com',
+          'scope': 'https://www.googleapis.com/auth/urlshortener'
+        };
+        gapi.auth.authorize(config, function() {
+          console.log('login complete');
+          console.log(gapi.auth.getToken());
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="auth();">Authorize</button>
+  </body>
+</html>
