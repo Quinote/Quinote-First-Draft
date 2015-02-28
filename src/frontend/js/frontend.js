@@ -1,27 +1,27 @@
 // Quinote 2015
 // Author: Kathryn Glover
 
-
-$('#b').click(function(){
+$('#buttonGenerateQuiz').click(function(){
 	$('#quizframe').toggle();
 	$('#scorepage').toggle();
 	$('#quizDialog').css("z-index", "4");
 
 });
-$('#md-close').click(function(){
+$('#buttonCloseQuiz').click(function(){
 	$('#quizDialog').css("z-index", "-10");
 });
 
-$('#b1').click(function(){
+$('#buttonStartQuiz').click(function(){
 	$('#quizframe').toggle();
 });
 
-$(".numberonly").on("keypress keyup blur",function (event) {    
-          $(this).val($(this).val().replace(/[^\d].+/, ""));
-           if ((event.which < 48 || event.which > 57)) {
-               event.preventDefault();
-           }
-       });
+$(".numberonly").on("keypress keyup blur",function (event) {
+	$(this).val($(this).val().replace(/[^\d].+/, ""));
+	if ((event.which < 48 || event.which > 57)) {
+		event.preventDefault();
+	}
+});
+
 function showQuiz(){
 	document.getElementById("quizopener").style.visibility="hidden";
 	document.getElementById("quizframe").style.visibility="visable";
@@ -30,7 +30,6 @@ function showQuiz(){
 	document.getElementById("scoreKeeper").style.display="none";
 	document.getElementById("one").style.display="none";
 	document.getElementById("two").style.display="none";
-	document.getElementById("b2").style.display="none";
 };
 		var q=0;
 		var score=0;	  
@@ -41,7 +40,7 @@ function showQuiz(){
 		
 function checkAnswer() {
 	document.getElementById("checkCon").style.visibility="visable";
-	document.getElementById("meow").style.visibility="hidden";
+	document.getElementById("answerSelections").style.visibility="hidden";
 	var inputs = document.getElementsByName("rd");
 	var chat = document.getElementsByName("ch");
 	var x=0;
@@ -120,7 +119,7 @@ function showCorrect(){
 	var oneAns=document.getElementById("one");
 	var aText=" is correct!";
 	oneAns.innerHTML= testQuestions[q].answer + aText;
-	document.getElementById("b2").style.display="";
+	document.getElementById("buttonNext").style.display="";
 
 }
 function hideCorrect(){
@@ -133,7 +132,7 @@ function showIncorrect(){
 	var twoAns=document.getElementById("two");
 	var a2Text="Incorrect! The answer is: ";
 	twoAns.innerHTML= a2Text + testQuestions[q].answer;
-	document.getElementById("b2").style.display="";	
+	document.getElementById("buttonNext").style.display="";	
 }
 function hideIncorrect(){
 	document.getElementById("two").style.display="none";
@@ -148,15 +147,15 @@ function generateRandomNum(){
 	rand.push(q);
 }
 function checkPage(){
-	document.getElementById("checker").style.display="none";
-	document.getElementById("b2").style.display="";
+	document.getElementById("buttonCheck").style.display="none";
+	document.getElementById("buttonNext").style.display="";
 }
 function randomizeQuiz(){
-	document.getElementById("meow").style.visibility="";
+	document.getElementById("answerSelections").style.visibility="";
 	var we = document.getElementById("qLength").value;
 	var nuw = (parseInt(we) + 1);
-	document.getElementById("checker").style.display="";
-	document.getElementById("b2").style.display="none";
+	document.getElementById("buttonCheck").style.display="";
+	document.getElementById("buttonNext").style.display="none";
 	hideIncorrect();
 	hideCorrect();
 	counter++;
@@ -243,10 +242,9 @@ function completeQuiz(){
 	document.getElementById("answer_choice").style.display="none";
 	document.getElementById("answer_check").style.display="none";
 	document.getElementById("scorepage").style.display="";
-	document.getElementById("b1").style.display="none";
-	document.getElementById("b2").style.display="none";
-	document.getElementById("question").style.visibility="hidden";
-	document.getElementById("checker").style.display="none";
+	document.getElementById("buttonNext").style.display="none";
+	document.getElementById("question").style.display="none";
+	document.getElementById("buttonCheck").style.display="none";
 	document.getElementById("quizframe").style.display="none";
 	document.getElementById("quizopener").style.display="none";
 };
@@ -270,19 +268,19 @@ var dialog = (function() {
 	function init() {
 		var overlay = document.querySelector( '.dialogShadow' );
 		[].slice.call( document.querySelectorAll( '.dialogTrigger' ) ).forEach( function( el, i ) {
-			var modal = document.querySelector( '#quizDialog' ),
-			close = modal.querySelector( '.dialogClose' );
-			function removeModal() {
+			var transform = document.querySelector( '#quizDialog' ),
+			close = transform.querySelector( '.dialogClose' );
+			function removedialog() {
 				$("#quizDialog").removeClass("dialogVisable");
 			}
-			function removeModalHandler() {
-				removeModal();
+			function removedialogHandler() {
+				removedialog();
 			}
 			el.addEventListener( 'click', function( ev ) {
 				$("#quizDialog").addClass("dialogVisable");
 			});
 			close.addEventListener( 'click', function( ev ) {
-				removeModalHandler();
+				removedialogHandler();
 			});
 		});
 	}
