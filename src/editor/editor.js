@@ -28,10 +28,12 @@ var main = function() {
         styles: false
     });
 
-    // Set event handlers
+    /*************************************
+     * Event Handlers
+     *************************************/
     editor
         .on('text-change', function(delta, source) {
-            //buildList(parseEditorText());
+            buildList(parseEditorText());
         })
     ;
 
@@ -86,12 +88,6 @@ var resizeEditor = function() {
 
 
 
-
-/* The functions below deal with parsing text
- * and handling the returned object.  They probably
- * belong in their own file.
- */
-
 var parseEditorText = function() {
     /* Parses the text inside of the editor
      * after first formatting it appropriately.
@@ -103,25 +99,37 @@ var parseEditorText = function() {
     return parseInput(textArray);
 };
 
+var classString = function(element) {
+    if (element instanceof DateElement) {
+        return "date-element";
+    } else if (element.definitions.length > 0) {
+        return "identifier-element";
+    } else {
+        return "unknown-element";
+    }
+};
+
 var buildList = function(parseResult) {
     /* Takes in a parse result, and rebuilds the
-     * .notes-list ordered list with it.
+     * #notes-list ordered list with it.
      *
      * TODO:
      *    • Make this not so horribly inefficient
      *    • Figure out how we should separate/format the types of keys
      */
-    list = $('.notes-list ol');
+    list = $('#notes-list ol');
     list.empty();
 
     for (i=0; i<parseResult.parsedElements.length; i++) {
         var nextElement = parseResult.parsedElements[i];
 
-        list.append($('<li>').text(nextElement.getIdentifier()));
+        var listItem = $('<li>').text(nextElement.getIdentifier());
+        listItem.addClass(classString(nextElement));
+        list.append(listItem);
 
         if (nextElement.subelements.length > 0) {
             // call recursive function on any subelements
-            list.append(buildSublist(nextElement.subelements, list, 1));
+            list.append(buildSublist(nextElement.subelements, 1));
         }
     }
 };
@@ -139,7 +147,7 @@ function buildSublist(elements, indentLevel) {
 
     for (i=0; i<elements.length; i++) {
         var nextElement = elements[i];
-        newList += indents + "<li>" + nextElement.getIdentifier() + "<\li>";
+        newList += indents + "<li class=" + classString(nextElement) + ">" + nextElement.getIdentifier() + "<\li>";
         if (nextElement.subelements.length > 0) {
             // recurse on sublists
             newList += buildSublist(nextElement.subelements, indentLevel+1);

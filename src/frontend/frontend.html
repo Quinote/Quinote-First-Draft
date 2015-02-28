@@ -10,7 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="css/frontend.css" />
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 		<link rel="stylesheet" type="text/css" href="../../quill/quill.base.css">
-    <link rel="stylesheet" type="text/css" href="../editor/editor.css">
 
 	</head>
 
@@ -184,9 +183,14 @@
 				</div>
 				<div id="sidebar">
 					<div id="sideheader">
-						<h1>Syntax Guide</h1>
-						<br>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est diam, congue non efficitur non, interdum ut nibh. Integer a ipsum porta, blandit libero sit amet, imperdiet erat. Cras vulputate enim erat, eget maximus ex rhoncus non. Curabitur laoreet est sit amet augue tempus mollis et vel nisl. Curabitur congue, eros ac pretium molestie, magna massa porttitor enim, eu condimentum ligula metus eu lorem. Fusce consequat risus ac magna rhoncus, id euismod augue finibus. Fusce faucibus venenatis dignissim. Sed hendrerit congue lacus, at posuere odio placerat eget. Morbi congue erat ac sapien volutpat, eu molestie felis sagittis. Sed a maximus elit. Praesent nec laoreet sem. Proin non pretium tellus, eget gravida nisi.
+						<h1>Parsed Notes</h1>
+            <div class="summary-wrapper"> <!--List of keys-->
+              <div id="notes-list">
+                <ol>
+                  <li>Once you enter notes, the keys will be shown here.</li>
+                </ol>
+              </div>
+            </div>
 						<h2>Quiz Options</h2>
 						<h3>Length:</h3>
 						<input size="4" type="text" id="qLength" name="numeric" value="" class='numberonly'/> questions.
@@ -200,7 +204,7 @@
 					<div id="thequiz">
 						<div id="quizHead">
 							<button class="dialogClose">Quit</button>
-					</div>
+					  </div>
 					<div id="wrapper">
 						<div id="quiz.container">
 							<div id="quizopener">
@@ -242,7 +246,7 @@
 									<g>
 										<line fill="#FFFFFF" stroke="#4FA542" stroke-miterlimit="10" x1="462.195" y1="261.688" x2="462.195" y2="320.458"/>
 										<g>
-											
+
 												<image overflow="visible" opacity="0.5" width="647" height="787" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAooAAAMYCAYAAABMrcZwAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA
 									GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAIStJREFUeNrs3e1y6riagFEZ6HP/
 									1zsd7PmzqXar9fHKNsTAWlUU2SQhYM5UPyNZ8iUBAEDBxSEAAEAoAgAgFAEAEIoAAAhFAACEIgAA
@@ -420,7 +424,7 @@
 										<path fill="#4FA542" d="M408.745,291.035h-58.529c-1.589,0-2.877-1.29-2.877-2.877c0-1.591,1.288-2.88,2.877-2.88h58.529
 											c1.589,0,2.879,1.29,2.879,2.88C411.624,289.745,410.334,291.035,408.745,291.035z"/>
 										<g>
-											
+
 												<image overflow="visible" opacity="0.5" width="559" height="1104" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjMAAARUCAYAAACDc5IaAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA
 									GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAQuxJREFUeNrs3Y2S1Ti2oFE5od//
 									fbvIPBMz0cScdlvSliz576wVQQBZFNBVdW9+bMvaKQEAAAAAAAAAAAAAAAAAAFCxPOD3/fKvEQDE
@@ -769,7 +773,7 @@
 								</div>
 								<div id="checkCon">
 									<div id="check">
-										<div id="one"> 
+										<div id="one">
 											<h3>Correct</h3>
 										</div>
 										<div id="two">
@@ -821,7 +825,7 @@
 											</text>
 										</svg>
 									</div>
-									<div id="leaf">  
+									<div id="leaf">
 										<svg width="200" height="200" viewBox="275 300 275 50" enable-background="new 275 300 275 50">
 											<defs>
 												<filter id="sun">
@@ -877,8 +881,9 @@
 
 
 		    <!--Editor scripts-->
-		 <script type="text/javascript" src="../../quill/quill.min.js"></script>
-		<script type="text/javascript" src="../editor/editor.js"></script>
+		  <script type="text/javascript" src="../../quill/quill.min.js"></script>
+      <script type="text/javascript" src="../editor/editor.js"></script>
+      <script type="text/javascript" src="../parser/parser.js"></script>
 
 
 

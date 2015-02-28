@@ -144,7 +144,7 @@ footer {
 #toolbar{
 	padding: 10px;
 	text-align: center;
-	vertical-align: center;
+	vertical-align: middle;
 }
 #editor {
 	height:150mm; 
@@ -213,4 +213,28 @@ h3 {
 }
 #scorepage{
 	text-align: center;
+}
+
+
+
+
+#notes-list ol {
+    /*list-style-type: circle;*/
+    list-style-type: none;
+    padding-left: 0;
+    overflow: hidden;
+}
+
+#notes-list ol li {
+    margin-bottom: 1px;
+}
+
+.identifier-element {
+    background-color: #a2ff9d
+}
+.date-element {
+    background-color: #7791ff
+}
+.unknown-element {
+    background-color: #ff6d72
 }
