@@ -157,8 +157,9 @@ function generateRandomNum(){
 }
 function checkPage(){
 	document.getElementById("buttonCheck").style.display="none";
-	document.getElementById("buttonNext").style.display="visible";
+	document.getElementById("buttonNext").style.display="";
 }
+
 function randomizeQuiz(){
 	document.getElementById("answerSelections").style.visibility="";
 	var we = document.getElementById("qLength").value;
@@ -172,7 +173,7 @@ function randomizeQuiz(){
 			completeQuiz();
 		}
 		else{
-			generateRandomNum();
+			//generateRandomNum();
 			if (testQuestions[q].questionType == 1){
 				var x=document.getElementById("question");
 				var mcq=" is: ";
