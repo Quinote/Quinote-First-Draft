@@ -179,7 +179,7 @@ function randomizeQuiz(){
 			else if(testQuestions[q].questionType==2){
 				var x=document.getElementById("question");
 				var fbq=" ___________ ";
-				x.innerHTML=testQuestions[q].identifier + fbq + testQuestions[q].definition;
+				x.innerHTML=testQuestions[q].definitionString;
 				hideChoice();
 				showText();
 				hideCheck();
