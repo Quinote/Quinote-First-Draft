@@ -108,7 +108,7 @@ function checkAnswer() {
 					document.getElementById("scr").value = score;
 					showCorrect();
 				}
-				else if(select[i]!=testQuestions[q].answer){
+				else if(select[i]!==testQuestions[q].answer){
 					showIncorrect()
 				}
 				chat[i].checked = false;
