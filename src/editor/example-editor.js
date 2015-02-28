@@ -28,9 +28,7 @@ var main = function() {
         styles: false
     });
 
-    /*************************************
-     * Event Handlers
-     *************************************/
+    // Set event handlers
     editor
         .on('text-change', function(delta, source) {
             buildList(parseEditorText());
@@ -88,6 +86,12 @@ var resizeEditor = function() {
 
 
 
+
+/* The functions below deal with parsing text
+ * and handling the returned object.  They probably
+ * belong in their own file.
+ */
+
 var parseEditorText = function() {
     /* Parses the text inside of the editor
      * after first formatting it appropriately.
@@ -111,13 +115,13 @@ var classString = function(element) {
 
 var buildList = function(parseResult) {
     /* Takes in a parse result, and rebuilds the
-     * #notes-list ordered list with it.
+     * .notes-list ordered list with it.
      *
      * TODO:
      *    • Make this not so horribly inefficient
      *    • Figure out how we should separate/format the types of keys
      */
-    list = $('#notes-list ol');
+    list = $('.notes-list ol');
     list.empty();
 
     for (i=0; i<parseResult.parsedElements.length; i++) {

@@ -22,10 +22,21 @@
 
 #editor {
     border: 1px solid #ccc;
+    height: 600px;
 }
 
 .summary-wrapper .notes-list ol {
     /*list-style-type: circle;*/
     list-style-type: none;
     padding-left: 15px;
+}
+
+.identifier-element {
+    background-color: #a2ff9d
+}
+.date-element {
+    background-color: #7791ff
+}
+.unknown-element {
+    background-color: #ff6d72
 }
