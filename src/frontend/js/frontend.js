@@ -1,7 +1,14 @@
 // Quinote 2015
 // Author: Kathryn Glover
+//var testQuestions;
+
+var testQuestions;
 
 $('#buttonGenerateQuiz').click(function(){
+    var parseResult = parseInput(editor.getText().split("\n"));
+    var optionList = new OptionList(3, 1, 1);
+    var quiz = makeQuiz(parseResult, optionList);
+    testQuestions = quiz.questions;
 	$('#quizframe').toggle();
 	$('#scorepage').toggle();
 	$('#quizDialog').css("z-index", "4");
@@ -24,7 +31,7 @@ $(".numberonly").on("keypress keyup blur",function (event) {
 
 function showQuiz(){
 	document.getElementById("quizopener").style.visibility="hidden";
-	document.getElementById("quizframe").style.visibility="visable";
+	document.getElementById("quizframe").style.visibility="visible";
 	document.getElementById("scorepage").style.display="none";
 	document.getElementById("svgOpener").style.display="none";
 	document.getElementById("scoreKeeper").style.display="none";
@@ -41,7 +48,7 @@ var nuw = parseInt(we);
 var select = ["true", "false"];
 		
 function checkAnswer() {
-	document.getElementById("checkCon").style.visibility="visable";
+	document.getElementById("checkCon").style.visibility="visible";
 	document.getElementById("answerSelections").style.visibility="hidden";
 	var inputs = document.getElementsByName("rd");
 	var chat = document.getElementsByName("ch");
@@ -273,13 +280,13 @@ var dialog = (function() {
 			var transform = document.querySelector( '#quizDialog' ),
 			close = transform.querySelector( '.dialogClose' );
 			function removedialog() {
-				$("#quizDialog").removeClass("dialogVisable");
+				$("#quizDialog").removeClass("dialogVisible");
 			}
 			function removedialogHandler() {
 				removedialog();
 			}
 			el.addEventListener( 'click', function( ev ) {
-				$("#quizDialog").addClass("dialogVisable");
+				$("#quizDialog").addClass("dialogVisible");
 			});
 			close.addEventListener( 'click', function( ev ) {
 				removedialogHandler();
