@@ -69,6 +69,10 @@ function Quiz(questions) {
 		// reset the question index
 		this.index = 0;
 	}
+	
+	this.size = function() {
+		return this.questions.length;
+	}
 			
 }
 
@@ -94,6 +98,15 @@ function MultipleChoiceQuestion(identifier, answer, otherChoices) {
 	
 	this.getText = function() {
 		return "Which of the following is associated with \"" + this.identifier + "\"?";
+	}
+	
+	this.getAllAnswers = function() {
+		// get list of all possible answers, randomized
+		
+		var buffer = this.otherChoices.slice();
+		var index = Math.floor(Math.random()*buffer.length);
+		buffer.splice(index, 0, this.answer);
+		return buffer;
 	}
 }
 
