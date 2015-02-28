@@ -188,7 +188,7 @@ function randomizeQuiz(){
 			else if(testQuestions[q].questionType==3){
 				var x=document.getElementById("question");
 				var tfq=" is associated with ";
-				x.innerHTML=testQuestions[q].identifier + tfq + testQuestions[q].definition[0];
+				x.innerHTML=testQuestions[q].identifier + tfq + testQuestions[q].definition;
 				hideChoice();
 				hideText();
 				showCheckbuttons();
