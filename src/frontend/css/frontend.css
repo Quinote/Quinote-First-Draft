@@ -4,7 +4,7 @@ body {
 	font-family: Goudy Old Style, Serif;
 	line-height: 1.2;
 	display: block;
-	background-image: url(../../../../../Downloads/Quinote-First-Draft-master/src/frontend/svg/background.svg);
+	background-image: url(../svg/background.svg);
 }
 #topheader {
 	background-color: rgb(79,165,66);
@@ -31,6 +31,11 @@ body {
 }
 #wrapper {
 	padding: 50px;
+	background-color: #fff;
+	outline-color: #000000;
+	outline-width: 5px;
+	min-height: 155px;
+
 }
 #pagecontainer{
 	position: fixed;
@@ -60,9 +65,9 @@ footer {
 	max-width: 630px;
 	min-width: 500px;
 	height: auto;
-	z-index: 3;
+	z-index: -10;
 }
-.md-show {
+.dialogVisable {
 	visibility: visible;
 }
 .dialogShadow{
@@ -79,12 +84,12 @@ footer {
 	-moz-transition: all 0.3s;*/
 	transition: all 0.3s;
 }
-.md-show ~ .dialogShadow {
+.dialogVisable ~ .dialogShadow {
 	opacity: 1;
 	visibility: visible;
 }
 .md-content {
-	background: #ffffff;
+	background: #4FA542;
 	position: relative;
 	border-radius: 3px;
 	margin: 0 auto;
@@ -100,7 +105,7 @@ footer {
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.md-show.md-effect-1 .md-content {
+.dialogVisable.md-effect-1 .md-content {
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);
@@ -111,7 +116,7 @@ footer {
     float: right;
     width: 200px;
     outline: 10px;
-    outline-color: black;
+    outline-color: #000000;
     padding: 20px;
     background-color: #FFFFFF;
     box-shadow: 10px 10px 5px #BABABA;
@@ -128,6 +133,7 @@ footer {
 	width:210mm;
 	float: left;
 	box-shadow: 10px 10px 5px #BABABA;
+	background-color: #FFFFFF;
 }
 #editorToolbar{
 	background-color: #4FA542;
@@ -176,10 +182,7 @@ h3 {
 #leaf{
 	position: inherit;
 	z-index: 2;
-	width: 250px;
-	padding-right: 35px;
-	padding-left: 35px;
-	padding-top: 35px;
+
 }
 #wha{
 	position: relative;
@@ -188,30 +191,32 @@ h3 {
 	width: 320px;
 }
 #no{
-	position: fixed;
 	z-index: 6;
-	width: 250px;
-	padding-right: 35px;
-	padding-left: 35px;
-	padding-bottom: 40px;
+	top: 20px;
+	height: 50px;
+
 }
-#the{
+#leafHolder{
 	display: block;
-	width: 310px;
-	position: absolute;
 	top: 0;
 	margin-left: 0;
 	margin-right: 0;
 }
-#sco {
+#scoreDisplay {
 	font-size: 40px;
-	width: 300px;
 	z-index: 5;
-	position: fixed;
-	padding-top: 140px;
-	text-align: center;
 	top: 0;
-
-
 }
-
+#quizopener {
+	text-align: center;
+	font-size: 18px;
+}
+#quizButtons{
+	float: right;
+	position: absolute;
+	top: 200px;
+	left: 175px;
+}
+#scorepage{
+	text-align: center;
+}

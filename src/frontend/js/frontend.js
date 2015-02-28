@@ -1,10 +1,21 @@
+// Quinote 2015
+// Author: Kathryn Glover
+
+
 $('#b').click(function(){
 	$('#quizframe').toggle();
 	$('#scorepage').toggle();
+	$('#modal-1').css("z-index", "4");
+
 });
+$('#md-close').click(function(){
+	$('#modal-1').css("z-index", "-10");
+});
+
 $('#b1').click(function(){
 	$('#quizframe').toggle();
 });
+
 $(".numberonly").on("keypress keyup blur",function (event) {    
           $(this).val($(this).val().replace(/[^\d].+/, ""));
            if ((event.which < 48 || event.which > 57)) {
@@ -15,11 +26,12 @@ function showQuiz(){
 	document.getElementById("quizopener").style.visibility="hidden";
 	document.getElementById("quizframe").style.visibility="visable";
 	document.getElementById("scorepage").style.display="none";
-	document.getElementById("mad").style.display="none";
+	document.getElementById("svgOpener").style.display="none";
+	document.getElementById("scoreKeeper").style.display="none";
 	document.getElementById("one").style.display="none";
 	document.getElementById("two").style.display="none";
 	document.getElementById("b2").style.display="none";
-}
+};
 		var q=0;
 		var score=0;	  
 		var rand = [];
@@ -226,7 +238,7 @@ function completeQuiz(){
 	var om = document.getElementById("qLength").value;
 	var tot = (parseInt(om));
 	$("#question").html("<h4>Your score is: "+score+"/"+tot+"<h4>");
-	$("#sco").html("" +score+"/"+tot+ "");
+	$("#scoreDisplay").html("" +score+"/"+tot+ "");
 	document.getElementById("answer_text").style.display="none";
 	document.getElementById("answer_choice").style.display="none";
 	document.getElementById("answer_check").style.display="none";
@@ -235,6 +247,8 @@ function completeQuiz(){
 	document.getElementById("b2").style.display="none";
 	document.getElementById("question").style.visibility="hidden";
 	document.getElementById("checker").style.display="none";
+	document.getElementById("quizframe").style.display="none";
+	document.getElementById("quizopener").style.display="none";
 };
 
 
@@ -251,20 +265,22 @@ $(function(){
 // 		container: '#toolbar'
 // 	});
 
+
 var dialog = (function() {
 	function init() {
 		var overlay = document.querySelector( '.dialogShadow' );
-		[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i ) {
+		[].slice.call( document.querySelectorAll( '.dialogTrigger' ) ).forEach( function( el, i ) {
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-			close = modal.querySelector( '.md-close' );
+			close = modal.querySelector( '.dialogClose' );
 			function removeModal() {
-				classie.remove( modal, 'md-show' );
+				classie.remove( modal, 'dialogVisable' );
+				
 			}
 			function removeModalHandler() {
 				removeModal();
 			}
 			el.addEventListener( 'click', function( ev ) {
-				classie.add( modal, 'md-show' );
+				classie.add( modal, 'dialogVisable' );
 			});
 			close.addEventListener( 'click', function( ev ) {
 				removeModalHandler();
