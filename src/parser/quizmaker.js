@@ -46,6 +46,30 @@ function Quiz(questions) {
 	// currently only contains a list of questions
 	
 	this.questions = questions;
+	this.index = 0;
+	
+	this.hasNext = function() {
+		// return true if there are questions remaining in the quiz
+		return this.index < this.questions.length;
+	}
+	
+	this.getNext = function() {
+		// get the next question in the quiz
+		if (this.hasNext()) {
+			var nextQuestion = this.questions[this.index];
+			index++;
+			return nextQuestion;
+		} else {
+			console.log("Error: no more questions.");
+			return undefined;
+		}
+	}
+	
+	this.reset = function() {
+		// reset the question index
+		this.index = 0;
+	}
+			
 }
 
 ////////////////////////
