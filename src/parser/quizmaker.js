@@ -99,6 +99,10 @@ function MultipleChoiceQuestion(identifier, answer, otherChoices) {
 	this.answer = answer;
 	this.otherChoices = otherChoices;
 	
+	// TEMPORARY; REMOVE LATER (TODO)
+	this.choices = this.getAllAnswers();
+	/////////////////////////////////
+	
 	this.getText = function() {
 		return "Which of the following is associated with \"" + this.identifier + "\"?";
 	}
