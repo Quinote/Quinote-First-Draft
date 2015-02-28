@@ -31,12 +31,14 @@ function showQuiz(){
 	document.getElementById("one").style.display="none";
 	document.getElementById("two").style.display="none";
 };
-		var q=0;
-		var score=0;	  
-		var rand = [];
-		var counter=0;
-		var we = document.getElementById("qLength").value;
-    	var nuw = parseInt(we);
+
+var q=0;
+var score=0;	  
+var rand = [];
+var counter=0;
+var we = document.getElementById("qLength").value;
+var nuw = parseInt(we);
+var select = ["true", "false"];
 		
 function checkAnswer() {
 	document.getElementById("checkCon").style.visibility="visable";
@@ -94,12 +96,12 @@ function checkAnswer() {
 		for (var i = 0; i < chat.length; i++){
 			if (chat[i].checked){
 				y=1;
-				if(testQuestions[q].select[i]==testQuestions[q].answer){
+				if(select[i]===testQuestions[q].answer){
 					score = score + 1;
 					document.getElementById("scr").value = score;
 					showCorrect();
 				}
-				else if(testQuestions[q].select[i]!=testQuestions[q].answer){
+				else if(select[i]!=testQuestions[q].answer){
 					showIncorrect()
 				}
 				chat[i].checked = false;
@@ -177,7 +179,7 @@ function randomizeQuiz(){
 			else if(testQuestions[q].questionType==2){
 				var x=document.getElementById("question");
 				var fbq=" ___________ ";
-				x.innerHTML=testQuestions[q].identifier + fbq + testQuestions[q].end[0];
+				x.innerHTML=testQuestions[q].identifier + fbq + testQuestions[q].definition;
 				hideChoice();
 				showText();
 				hideCheck();

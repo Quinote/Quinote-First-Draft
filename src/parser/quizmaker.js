@@ -101,6 +101,7 @@ function MultipleChoiceQuestion(identifier, answer, otherChoices) {
 	
 	// TEMPORARY; REMOVE LATER (TODO)
 	this.choices = this.getAllAnswers();
+	this.questionType = 1;
 	/////////////////////////////////
 	
 	this.getText = function() {
@@ -122,6 +123,10 @@ function TrueFalseQuestion(identifier, definition, answer) {
 	this.definition = definition;
 	this.answer = answer;
 	
+	// TEMPORARY; REMOVE LATER (TODO)
+	this.questionType = 3;
+	/////////////////////////////////
+	
 	this.getText = function() {
 		return "True or false: \"" + this.identifier + "\" is associated with \"" + this.definition + "\"";
 	}
@@ -132,6 +137,10 @@ function TrueFalseQuestion(identifier, definition, answer) {
 function FillInTheBlankQuestion(definitionString, startIndex, stopIndex, answer) {
 	this.definitionString = definitionString;
 	this.answer = answer;
+	
+	// TEMPORARY; REMOVE LATER (TODO)
+	this.questionType = 2;
+	/////////////////////////////////
 	
 	// unsure if these are needed
 	this.startIndex = startIndex; 
