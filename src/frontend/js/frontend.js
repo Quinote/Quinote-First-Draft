@@ -215,10 +215,10 @@ function hideChoice(){
 	document.getElementById("answer_choice").style.display="none";
 }
 function showCheckbuttons(){
-	document.getElementById("true").innerHTML = testQuestions[q].select[0];
-	document.getElementById("false").innerHT = testQuestions[q].select[1];
-	document.getElementById("true").value = testQuestions[q].select[0];
-	document.getElementById("false").value = testQuestions[q].select[1];
+	document.getElementById("true").innerHTML = select[0];
+	document.getElementById("false").innerHT = select[1];
+	document.getElementById("true").value = select[0];
+	document.getElementById("false").value = select[1];
 	return;
 }
 function showCheck(){
