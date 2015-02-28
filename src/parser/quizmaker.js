@@ -88,9 +88,9 @@ function OptionList(numberMC, numberFITB, numberTF) {
 	this.numberTF = numberTF;
 	
 	this.questionTypes = {
-		"Multiple choice": mc, 
-		"Fill-in-the-blank": fitb, 
-		"True or false": tf
+		"Multiple choice": numberMC, 
+		"Fill-in-the-blank": numberFITB, 
+		"True or false": numberTF
 	};
 }
 
