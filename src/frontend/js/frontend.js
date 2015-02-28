@@ -147,11 +147,7 @@ function hideIncorrect(){
 	document.getElementById("two").style.display="none";
 }
 function generateRandomNum(){
-	q= Math.floor((Math.random() * testQuestions.length));
-	while (rand.indexOf[q] !== -1){
-		q = Math.floor((Math.random() * testQuestions.length));
-	}
-	rand.push(q);
+	q = q + 1;
 }
 function checkPage(){
 	document.getElementById("buttonCheck").style.display="none";
