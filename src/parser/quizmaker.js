@@ -301,12 +301,12 @@ function makeTrueFalseQuestion(identifierPool, parseResult) {
 	if (Math.random() > .5) isTrue = false;
 	
 	if (isTrue) {
-		answer = true;
+		answer = "true";
 		
 		// get random correct answer
 		definition = randomElement(element.definitions);
 	} else {
-		answer = false;
+		answer = "false";
 		
 		// this is extra-naive: get a random incorrect answer from
 		// pool of all definitions

@@ -148,9 +148,9 @@ function hideIncorrect(){
 }
 function generateRandomNum(){
 	q= Math.floor((Math.random() * testQuestions.length));
-	for (i=0;i<11;i++){
-		if (q == rand[i]){
-			generateRandomNum();
+	for (i=0;i<testQuestions.length;i++){
+		while (q == rand[i]){
+			q = Math.floor((Math.random() * testQuestions.length));
 		}
 	}
 	rand.push(q);
@@ -172,7 +172,7 @@ function randomizeQuiz(){
 			completeQuiz();
 		}
 		else{
-			//generateRandomNum();
+			generateRandomNum();
 			if (testQuestions[q].questionType == 1){
 				var x=document.getElementById("question");
 				var mcq=" is: ";
