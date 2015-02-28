@@ -147,7 +147,7 @@ function hideIncorrect(){
 	document.getElementById("two").style.display="none";
 }
 function generateRandomNum(){
-	q= Math.floor((Math.random() *testQuestions.length));
+	q= Math.floor((Math.random() * testQuestions.length));
 	for (i=0;i<11;i++){
 		if (q == rand[i]){
 			generateRandomNum();
@@ -172,7 +172,7 @@ function randomizeQuiz(){
 			completeQuiz();
 		}
 		else{
-			generateRandomNum();
+			//generateRandomNum();
 			if (testQuestions[q].questionType == 1){
 				var x=document.getElementById("question");
 				var mcq=" is: ";
