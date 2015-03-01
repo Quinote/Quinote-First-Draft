@@ -40,6 +40,7 @@ $(document).ready(function() {
 
 	$('#buttonStartQuiz').click(function(){
 		$('#quizframe').toggle();
+
 		nextQuestion();
 		flag = false;
 	});
@@ -226,7 +227,7 @@ function tearDown() {
 ///// COPIED FUNCTIONS /////
 
 function showQuiz(){
-	document.getElementById("quizopener").style.visibility="hidden";
+	document.getElementById("quizopener").style.display="none";
 	document.getElementById("quizframe").style.visibility="visible";
 	document.getElementById("scorepage").style.display="none";
 	document.getElementById("svgOpener").style.display="none";
