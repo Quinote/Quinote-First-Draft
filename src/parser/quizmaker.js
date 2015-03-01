@@ -31,7 +31,7 @@ TODO:
 */
 var FITB_filter = [
 	"the", "a", "an",
-	"to", "of",
+	"to", "of", "in", 
 	"and", "but", "or", "yet",
 	"is", "are", "was", "were", "be"
 ];
