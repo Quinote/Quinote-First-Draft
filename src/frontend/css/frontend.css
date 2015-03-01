@@ -67,7 +67,7 @@ footer {
 	height: auto;
 	z-index: -10;
 }
-.dialogVisable {
+.dialogVisible {
 	visibility: visible;
 }
 .dialogShadow{
@@ -84,7 +84,7 @@ footer {
 	-moz-transition: all 0.3s;*/
 	transition: all 0.3s;
 }
-.dialogVisable ~ .dialogShadow {
+.dialogVisible ~ .dialogShadow {
 	opacity: 1;
 	visibility: visible;
 }
@@ -105,7 +105,7 @@ footer {
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.dialogVisable.dialogEffect .quizContent {
+.dialogVisible.dialogEffect .quizContent {
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);
@@ -226,7 +226,8 @@ h3 {
 }
 
 #notes-list ol li {
-    margin-bottom: 1px;
+    margin-bottom: 1px
+    /*display: inline-block;*/
 }
 
 .identifier-element {

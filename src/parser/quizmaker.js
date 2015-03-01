@@ -83,14 +83,14 @@ function OptionList(numberMC, numberFITB, numberTF) {
 	
 	// limited for testing purposes
 	this.numberOfQuestions = numberMC + numberFITB + numberTF;
-	this.numberMultipleChoice = numberMC;
+	this.numberMC = numberMC;
 	this.numberFITB = numberFITB;
 	this.numberTF = numberTF;
 	
 	this.questionTypes = {
-		"Multiple choice": mc, 
-		"Fill-in-the-blank": fitb, 
-		"True or false": tf
+        "Multiple choice": numberMC,
+        "Fill-in-the-blank": numberFITB,
+        "True or false": numberTF
 	};
 }
 
@@ -98,10 +98,7 @@ function MultipleChoiceQuestion(identifier, answer, otherChoices) {
 	this.identifier = identifier;
 	this.answer = answer;
 	this.otherChoices = otherChoices;
-	
-	// TEMPORARY; REMOVE LATER (TODO)
-	this.choices = this.getAllAnswers();
-	/////////////////////////////////
+
 	
 	this.getText = function() {
 		return "Which of the following is associated with \"" + this.identifier + "\"?";
@@ -115,14 +112,24 @@ function MultipleChoiceQuestion(identifier, answer, otherChoices) {
 		buffer.splice(index, 0, this.answer);
 		return buffer;
 	}
+
+    // TEMPORARY; REMOVE LATER (TODO)
+    this.choices = this.getAllAnswers();
+    this.questionType = 1;
+    /////////////////////////////////
 }
 
 function TrueFalseQuestion(identifier, definition, answer) {
 	this.identifier = identifier;
 	this.definition = definition;
 	this.answer = answer;
-	
-	this.getText = function() {
+
+    // TEMPORARY; REMOVE LATER (TODO)
+    this.questionType = 3;
+    this.select = ["true","false"];
+    /////////////////////////////////
+
+    this.getText = function() {
 		return "True or false: \"" + this.identifier + "\" is associated with \"" + this.definition + "\"";
 	}
 	
@@ -136,9 +143,12 @@ function FillInTheBlankQuestion(definitionString, startIndex, stopIndex, answer)
 	// unsure if these are needed
 	this.startIndex = startIndex; 
 	this.stopIndex = stopIndex;
-	
-	
-	// TODO: metadata for location in notes
+
+    // TEMPORARY; REMOVE LATER (TODO)
+    this.questionType = 2;
+    /////////////////////////////////
+
+    // TODO: metadata for location in notes
 	
 	this.getText = function() {
 		return "Fill in the blank: \"" + this.definitionString + "\"";
@@ -292,12 +302,12 @@ function makeTrueFalseQuestion(identifierPool, parseResult) {
 	if (Math.random() > .5) isTrue = false;
 	
 	if (isTrue) {
-		answer = true;
+		answer = "true";
 		
 		// get random correct answer
 		definition = randomElement(element.definitions);
 	} else {
-		answer = false;
+		answer = "false";
 		
 		// this is extra-naive: get a random incorrect answer from
 		// pool of all definitions
@@ -377,10 +387,10 @@ function randomIndex(array) {
 
 function randomElement(array) {
 	// get random element of array
-	if (array.length === 0) {
-		console.log("Error: array is empty.");
-		return null;
-	}
+	//if (array.length === 0) {
+	//	console.log("Error: array is empty.");
+	//	return null;
+	//}
 	return array[randomIndex(array)];
 }
 
