@@ -22,7 +22,7 @@ $(document).ready(function() {
 	$('#buttonGenerateQuiz').click(function() {// GENERATE QUIZ
 		
 		parseResult = parseInput(editor.getText().split("\n"));
-		optionList = new OptionList(0,1,0);
+		optionList = new OptionList(2,2,2);
 		quiz = makeQuiz(parseResult, optionList);
 		console.log(parseResult, quiz);
 		totalQuestions = quiz.size();
@@ -85,9 +85,9 @@ function checkMCQuestion() {
 		}
 	}
 	if (index === -1) {
+        document.getElementById("answerSelections").style.visibility="visible";
 		alert("Please select an answer");
 		console.log("No answers selected", ($('input[name="rd"]:checked').length > 0));
-		document.getElementById("answerSelections").style.visibility="visible";
 	} else {
 		var selected = choices[index];
 		console.log(selected);
@@ -111,9 +111,9 @@ function checkTFQuestion() {
 		}
 	}
 	if (index === -1) {
+        document.getElementById("answerSelections").style.visibility="visible";
 		alert("Please select an answer");
 		console.log("No answers selected", ($('input[name="rd"]:checked').length > 0));
-		document.getElementById("answerSelections").style.visibility="visible";
 	} else {
 		var selected = selectTF[index];
 		if (selected === currentQuestion.answer) {
@@ -131,8 +131,8 @@ function checkFITBQuestion() {
 	var answerField = $("#ansText");
 	var input = $("#ansText").val();
 	if (input === "") {
+        document.getElementById("answerSelections").style.visibility="visible";
 		alert("Please enter an answer.");
-		document.getElementById("answerSelections").style.visibility="visible";
 	} else {
 		if (input === currentQuestion.answer) {
 			showCorrect();
