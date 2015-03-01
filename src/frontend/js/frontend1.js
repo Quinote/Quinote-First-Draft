@@ -36,6 +36,7 @@ $(document).ready(function() {
 	
 	$('#buttonCloseQuiz').click(function(){
 		$('#quizDialog').css("z-index", "-10");
+		$("#quizframe").toggle();
 	});
 
 	$('#buttonStartQuiz').click(function(){
@@ -51,7 +52,7 @@ $(document).ready(function() {
 	});
 
 	$("#buttonCheck").click(function() { // CHECK answer button
-
+		//checkAnswer();
 	});
 });
 

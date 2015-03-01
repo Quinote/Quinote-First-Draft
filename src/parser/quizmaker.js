@@ -8,9 +8,11 @@ a Quiz object containing a number of questions.
 
 
 TODO:
+	- Avoid making undefined into identifier elements?
 	- Likely a lot of bug-fixing
 	- Avoid infinite loop based on insufficient input size
 	- when receiving null results, readd elements to pool?
+
 
 */
 
@@ -57,7 +59,7 @@ function Quiz(questions) {
 		// get the next question in the quiz
 		if (this.hasNext()) {
 			var nextQuestion = this.questions[this.index];
-			index++;
+			this.index++;
 			return nextQuestion;
 		} else {
 			console.log("Error: no more questions.");
@@ -83,7 +85,7 @@ function OptionList(numberMC, numberFITB, numberTF) {
 	
 	// limited for testing purposes
 	this.numberOfQuestions = numberMC + numberFITB + numberTF;
-	this.numberMultipleChoice = numberMC;
+	this.numberMC = numberMC;
 	this.numberFITB = numberFITB;
 	this.numberTF = numberTF;
 	
@@ -99,10 +101,7 @@ function MultipleChoiceQuestion(identifier, answer, otherChoices) {
 	this.answer = answer;
 	this.otherChoices = otherChoices;
 	
-	// TEMPORARY; REMOVE LATER (TODO)
-	this.choices = this.getAllAnswers();
-	this.questionType = 1;
-	/////////////////////////////////
+
 	
 	this.getText = function() {
 		return "Which of the following is associated with \"" + this.identifier + "\"?";
