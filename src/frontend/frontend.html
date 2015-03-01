@@ -195,7 +195,7 @@
 						<h3>Length:</h3>
 						<input size="4" type="text" id="qLength" name="numeric" value="" class='numberonly'/> questions.
 						<br><br>
-						<input class="dialogTrigger" type="button" id="buttonGenerateQuiz" value="Generate Quiz" />
+						<input class="dialogTrigger button quiButton" type="button" id="buttonGenerateQuiz" value="Generate Quiz" />
 					</div>
 				</div>
 		</div>
@@ -203,7 +203,7 @@
 				<div class="quizContent">
 					<div id="thequiz">
 						<div id="quizHead">
-							<button id="buttonCloseQuiz" class="dialogClose">Quit</button>
+							<button id="buttonCloseQuiz" class="dialogClose button quiButton">Quit</button>
 						</div>
 					<div id="wrapper">
 						<div id="quiz.container">
@@ -766,7 +766,7 @@
 									</g>
 									</svg>
 								</div>
-								<input type="button" id="buttonStartQuiz" value="Start" onclick="showQuiz(); randomizeQuiz();"/>
+								<input class="button quiButton" type="button" id="buttonStartQuiz" value="Start" onclick="showQuiz(); randomizeQuiz();"/>
 							</div>
 							<div id="quizframe">
 								<div id="question">
@@ -803,8 +803,8 @@
 									</div>
 								</div>
 								<ul id="quizButtons">
-									<input type="button" id="buttonNext" value="Next Question" onclick="randomizeQuiz();" />
-									<input type="button" id="buttonCheck" value="Check Answer" onclick="checkAnswer();" />
+									<input class="button quiButton" type="button" id="buttonNext" value="Next Question" onclick="randomizeQuiz();" />
+									<input class="button quiButton" type="button" id="buttonCheck" value="Check Answer" onclick="checkAnswer();" />
 								</ul>
 							</div>
 							<div id="scorepage">
