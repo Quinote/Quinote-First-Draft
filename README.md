@@ -3,6 +3,10 @@
 
 # Issues/Considerations
 
+• Quit doesn't refresh quiz
+• Undefined definitions (when definition is empty)
+
+
 • Missing </div> in frontend.html
 • After taking a quiz, the text editor UI becomes wonky (I think the quiz in the background is interfering)
 
