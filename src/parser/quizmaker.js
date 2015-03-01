@@ -88,9 +88,9 @@ function OptionList(numberMC, numberFITB, numberTF) {
 	this.numberTF = numberTF;
 	
 	this.questionTypes = {
-		"Multiple choice": numberMC, 
-		"Fill-in-the-blank": numberFITB, 
-		"True or false": numberTF
+		"Multiple choice": mc, 
+		"Fill-in-the-blank": fitb, 
+		"True or false": tf
 	};
 }
 
@@ -101,7 +101,6 @@ function MultipleChoiceQuestion(identifier, answer, otherChoices) {
 	
 	// TEMPORARY; REMOVE LATER (TODO)
 	this.choices = this.getAllAnswers();
-	this.questionType = 1;
 	/////////////////////////////////
 	
 	this.getText = function() {
@@ -123,10 +122,6 @@ function TrueFalseQuestion(identifier, definition, answer) {
 	this.definition = definition;
 	this.answer = answer;
 	
-	// TEMPORARY; REMOVE LATER (TODO)
-	this.questionType = 3;
-	/////////////////////////////////
-	
 	this.getText = function() {
 		return "True or false: \"" + this.identifier + "\" is associated with \"" + this.definition + "\"";
 	}
@@ -137,10 +132,6 @@ function TrueFalseQuestion(identifier, definition, answer) {
 function FillInTheBlankQuestion(definitionString, startIndex, stopIndex, answer) {
 	this.definitionString = definitionString;
 	this.answer = answer;
-	
-	// TEMPORARY; REMOVE LATER (TODO)
-	this.questionType = 2;
-	/////////////////////////////////
 	
 	// unsure if these are needed
 	this.startIndex = startIndex; 
@@ -301,12 +292,12 @@ function makeTrueFalseQuestion(identifierPool, parseResult) {
 	if (Math.random() > .5) isTrue = false;
 	
 	if (isTrue) {
-		answer = "true";
+		answer = true;
 		
 		// get random correct answer
 		definition = randomElement(element.definitions);
 	} else {
-		answer = "false";
+		answer = false;
 		
 		// this is extra-naive: get a random incorrect answer from
 		// pool of all definitions

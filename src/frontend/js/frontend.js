@@ -1,14 +1,7 @@
 // Quinote 2015
 // Author: Kathryn Glover
-//var testQuestions;
-
-var testQuestions;
 
 $('#buttonGenerateQuiz').click(function(){
-    var parseResult = parseInput(editor.getText().split("\n"));
-    var optionList = new OptionList(3, 1, 1);
-    var quiz = makeQuiz(parseResult, optionList);
-    testQuestions = quiz.questions;
 	$('#quizframe').toggle();
 	$('#scorepage').toggle();
 	$('#quizDialog').css("z-index", "4");
@@ -31,24 +24,22 @@ $(".numberonly").on("keypress keyup blur",function (event) {
 
 function showQuiz(){
 	document.getElementById("quizopener").style.visibility="hidden";
-	document.getElementById("quizframe").style.visibility="visible";
+	document.getElementById("quizframe").style.visibility="visable";
 	document.getElementById("scorepage").style.display="none";
 	document.getElementById("svgOpener").style.display="none";
 	document.getElementById("scoreKeeper").style.display="none";
 	document.getElementById("one").style.display="none";
 	document.getElementById("two").style.display="none";
 };
-
-var q=0;
-var score=0;	  
-var rand = [];
-var counter=0;
-var we = document.getElementById("qLength").value;
-var nuw = parseInt(we);
-var select = ["true", "false"];
+		var q=0;
+		var score=0;	  
+		var rand = [];
+		var counter=0;
+		var we = document.getElementById("qLength").value;
+    	var nuw = parseInt(we);
 		
 function checkAnswer() {
-	document.getElementById("checkCon").style.visibility="visible";
+	document.getElementById("checkCon").style.visibility="visable";
 	document.getElementById("answerSelections").style.visibility="hidden";
 	var inputs = document.getElementsByName("rd");
 	var chat = document.getElementsByName("ch");
@@ -103,12 +94,12 @@ function checkAnswer() {
 		for (var i = 0; i < chat.length; i++){
 			if (chat[i].checked){
 				y=1;
-				if(select[i]===testQuestions[q].answer){
+				if(testQuestions[q].select[i]==testQuestions[q].answer){
 					score = score + 1;
 					document.getElementById("scr").value = score;
 					showCorrect();
 				}
-				else if(select[i]!==testQuestions[q].answer){
+				else if(testQuestions[q].select[i]!=testQuestions[q].answer){
 					showIncorrect()
 				}
 				chat[i].checked = false;
@@ -147,13 +138,18 @@ function hideIncorrect(){
 	document.getElementById("two").style.display="none";
 }
 function generateRandomNum(){
-	q = q + 1;
+	q= Math.floor((Math.random() *testQuestions.length));
+	for (i=0;i<11;i++){
+		if (q == rand[i]){
+			generateRandomNum();
+		}
+	}
+	rand.push(q);
 }
 function checkPage(){
 	document.getElementById("buttonCheck").style.display="none";
 	document.getElementById("buttonNext").style.display="";
 }
-
 function randomizeQuiz(){
 	document.getElementById("answerSelections").style.visibility="";
 	var we = document.getElementById("qLength").value;
@@ -181,7 +177,7 @@ function randomizeQuiz(){
 			else if(testQuestions[q].questionType==2){
 				var x=document.getElementById("question");
 				var fbq=" ___________ ";
-				x.innerHTML=testQuestions[q].definitionString;
+				x.innerHTML=testQuestions[q].identifier + fbq + testQuestions[q].end[0];
 				hideChoice();
 				showText();
 				hideCheck();
@@ -190,7 +186,7 @@ function randomizeQuiz(){
 			else if(testQuestions[q].questionType==3){
 				var x=document.getElementById("question");
 				var tfq=" is associated with ";
-				x.innerHTML=testQuestions[q].identifier + tfq + testQuestions[q].definition;
+				x.innerHTML=testQuestions[q].identifier + tfq + testQuestions[q].definition[0];
 				hideChoice();
 				hideText();
 				showCheckbuttons();
@@ -217,10 +213,10 @@ function hideChoice(){
 	document.getElementById("answer_choice").style.display="none";
 }
 function showCheckbuttons(){
-	document.getElementById("true").innerHTML = select[0];
-	document.getElementById("false").innerHT = select[1];
-	document.getElementById("true").value = select[0];
-	document.getElementById("false").value = select[1];
+	document.getElementById("true").innerHTML = testQuestions[q].select[0];
+	document.getElementById("false").innerHT = testQuestions[q].select[1];
+	document.getElementById("true").value = testQuestions[q].select[0];
+	document.getElementById("false").value = testQuestions[q].select[1];
 	return;
 }
 function showCheck(){
@@ -275,13 +271,13 @@ var dialog = (function() {
 			var transform = document.querySelector( '#quizDialog' ),
 			close = transform.querySelector( '.dialogClose' );
 			function removedialog() {
-				$("#quizDialog").removeClass("dialogVisible");
+				$("#quizDialog").removeClass("dialogVisable");
 			}
 			function removedialogHandler() {
 				removedialog();
 			}
 			el.addEventListener( 'click', function( ev ) {
-				$("#quizDialog").addClass("dialogVisible");
+				$("#quizDialog").addClass("dialogVisable");
 			});
 			close.addEventListener( 'click', function( ev ) {
 				removedialogHandler();
