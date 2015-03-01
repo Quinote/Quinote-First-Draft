@@ -343,3 +343,11 @@ function completeQuiz(){
 	document.getElementById("quizopener").style.display="none";
 };
 
+
+$(function(){
+	$("#editorspace").draggable({
+		handle: "#editorToolbar",
+		containment: "parent"
+	});
+	$("#sidebar").draggable({ containment: "parent" });
+});
